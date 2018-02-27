@@ -1,0 +1,72 @@
+{
+  "name": "react-twitch-streamers",
+  "version": "0.0.1",
+  "description": "React web app for displaying twitch streamers with the usage of Twitch API",
+  "private": true,
+  "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/john-d-pelingo/react-twitch-streamers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/john-d-pelingo/react-twitch-streamers/issues"
+  },
+  "scripts": {
+    "build": "cross-env react-scripts build",
+    "build:ci": "run-s build",
+    "eject": "cross-env react-scripts eject",
+    "lint": "eslint .",
+    "nuke": "rimraf node_modules yarn.lock && yarn install",
+    "prebuild": "run-s sweep pretty lint test",
+    "prebuild:ci": "run-s sweep pretty lint test:c",
+    "precommit": "lint-staged",
+    "pretty": "prettier --write --config .prettierrc 'src/**/*.{js,jsx,css}'",
+    "serve": "serve -so build -p 8080",
+    "server": "json-server server/db.json --config server/json-server.json --routes server/routes.json",
+    "start": "cross-env react-scripts start",
+    "sweep": "rimraf build coverage",
+    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "test:c": "cross-env CI=true react-scripts test --env=jsdom --coverage",
+    "w:test": "cross-env react-scripts test --env=jsdom --no-cache --verbose"
+  },
+  "dependencies": {
+    "react": "16.2.0",
+    "react-dom": "16.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.9.2",
+    "react-scripts": "1.1.1",
+    "react-test-renderer": "^16.2.0",
+    "rimraf": "^2.6.2",
+    "serve": "^6.4.4"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/*.js",
+      "!src/features/*.js",
+      "!src/utilities/test-utils.js",
+      "!<rootDir>/node_modules/"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,css,scss}": [
+      "prettier --write --config .prettierrc",
+      "git add"
+    ]
+  }
+}
