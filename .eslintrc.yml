@@ -43,6 +43,10 @@ rules:
   import/prefer-default-export: 0
   no-console: 0
   no-debugger: 1
+  no-use-before-define:
+  - 2
+  - functions: false
+    variables: false
 
   # General
 
@@ -94,9 +98,9 @@ rules:
   - 2
   - vars: all
     args: after-used
-  no-use-before-define:
-  - 2
-  - functions: false
+  #no-use-before-define:
+  #- 2
+  #- functions: false
   no-useless-constructor: 0
   object-curly-spacing:
   - 2
