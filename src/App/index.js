@@ -5,6 +5,7 @@ import { css } from 'emotion';
 import { ALL, OFFLINE, ONLINE } from '../features/constants/routes';
 import HeaderNav from './components/HeaderNav';
 import TwitchLogo from './components/TwitchLogo';
+import Main from '../scenes/Main';
 
 class App extends Component {
   render() {
@@ -14,9 +15,9 @@ class App extends Component {
         <HeaderNav />
 
         <Switch>
-          <Route exact path={ALL} render={() => <div>all</div>} />
-          <Route exact path={OFFLINE} render={() => <div>offline</div>} />
-          <Route exact path={ONLINE} render={() => <div>online</div>} />
+          <Route exact path={ALL} component={Main} />
+          <Route exact path={OFFLINE} component={Main} />
+          <Route exact path={ONLINE} component={Main} />
           <Redirect to={ALL} />
         </Switch>
       </div>
