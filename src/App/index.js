@@ -11,8 +11,10 @@ class App extends Component {
   render() {
     return (
       <div className={app}>
-        <TwitchLogo />
-        <HeaderNav />
+        <section>
+          <TwitchLogo />
+          <HeaderNav />
+        </section>
 
         <Switch>
           <Route exact path={ALL} component={Main} />

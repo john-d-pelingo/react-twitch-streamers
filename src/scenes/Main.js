@@ -1,19 +1,100 @@
 import React, { Component } from 'react';
 import { css } from 'emotion';
 
-import StreamerCard from './components/StreamerCard';
+import Streamers from './components/Streamers';
+import Loader from './components/Loader';
 
 class Main extends Component {
+  state = {
+    isPending: true,
+    streamers: []
+  };
+
+  // TODO: Connect with API
+  // Fake loading from database
+  componentDidMount() {
+    this.fakeUploadId = setTimeout(() => {
+      this.setState({
+        isPending: false,
+        streamers: [
+          {
+            id: 'neko-0',
+            description:
+              'The cat is a lie booooooooooooooooooooooooooooooooooooooooooooooo',
+            image:
+              'https://static-cdn.jtvnw.net/jtv_user_pictures/20aa6279-f4f6-40ca-a9a3-2cae5920fed7-profile_image-300x300.jpg',
+            link: 'https://thebabas.babas',
+            username: 'Neko'
+          },
+          {
+            id: 'neko-1',
+            description:
+              'The cat is a lie booooooooooooooooooooooooooooooooooooooooooooooo',
+            image:
+              'https://static-cdn.jtvnw.net/jtv_user_pictures/20aa6279-f4f6-40ca-a9a3-2cae5920fed7-profile_image-300x300.jpg',
+            link: 'https://thebabas.babas',
+            username: 'Neko'
+          },
+          {
+            id: 'neko-2',
+            description:
+              'The cat is a lie booooooooooooooooooooooooooooooooooooooooooooooo',
+            image:
+              'https://static-cdn.jtvnw.net/jtv_user_pictures/20aa6279-f4f6-40ca-a9a3-2cae5920fed7-profile_image-300x300.jpg',
+            link: 'https://thebabas.babas',
+            username: 'Neko'
+          },
+          {
+            id: 'neko-3',
+            description:
+              'The cat is a lie booooooooooooooooooooooooooooooooooooooooooooooo',
+            image:
+              'https://static-cdn.jtvnw.net/jtv_user_pictures/20aa6279-f4f6-40ca-a9a3-2cae5920fed7-profile_image-300x300.jpg',
+            link: 'https://thebabas.babas',
+            username: 'Neko'
+          },
+          {
+            id: 'neko-4',
+            description:
+              'The cat is a lie booooooooooooooooooooooooooooooooooooooooooooooo',
+            image:
+              'https://static-cdn.jtvnw.net/jtv_user_pictures/20aa6279-f4f6-40ca-a9a3-2cae5920fed7-profile_image-300x300.jpg',
+            link: 'https://thebabas.babas',
+            username: 'Neko'
+          },
+          {
+            id: 'neko-5',
+            description:
+              'The cat is a lie booooooooooooooooooooooooooooooooooooooooooooooo',
+            image:
+              'https://static-cdn.jtvnw.net/jtv_user_pictures/20aa6279-f4f6-40ca-a9a3-2cae5920fed7-profile_image-300x300.jpg',
+            link: 'https://thebabas.babas',
+            username: 'Neko'
+          }
+        ]
+      });
+    }, Math.random() * 1500);
+  }
+
+  componentWillUnmount() {
+    if (this.fakeUploadId) {
+      window.clearTimeout(this.fakeUploadId);
+      this.fakeUploadId = null;
+    }
+  }
+
+  fakeUploadId = null;
+
   render() {
+    // TODO: Try react async-rendering and suspense
+    if (this.state.isPending) {
+      return <Loader />;
+    }
+
     return (
-      <div className={main}>
-        <StreamerCard
-          streamDescription="The cat is a lie booooooooooooooooooooooooooooooooooooooooooooooo"
-          streamImage="https://static-cdn.jtvnw.net/jtv_user_pictures/20aa6279-f4f6-40ca-a9a3-2cae5920fed7-profile_image-300x300.jpg"
-          streamLink="https://thebabas.babas"
-          username="Neko"
-        />
-      </div>
+      <main className={main}>
+        <Streamers streamers={this.state.streamers} />
+      </main>
     );
   }
 }
