@@ -60,6 +60,10 @@ const streamerCard = css`
   margin: 7.5px;
   transition: all 0.3s linear;
 
+  &:hover {
+    transform: scale(1.03);
+  }
+
   .status {
     position: absolute;
     right: 15px;
