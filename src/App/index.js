@@ -1,14 +1,34 @@
+/* eslint-disable react/no-did-mount-set-state */
 import React, { Component } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { css } from 'emotion';
 
-import { ALL, OFFLINE, ONLINE } from '../features/constants/routes';
+import api from 'src/features/api/twitch-service';
+
+import { ROOT } from '../features/constants/routes';
 import HeaderNav from './components/HeaderNav';
 import TwitchLogo from './components/TwitchLogo';
-import Main from '../scenes/Main';
+import Games from '../scenes/Games';
+import Streams from '../scenes/Streams';
 
 class App extends Component {
+  state = {
+    isPending: true,
+    games: []
+  };
+
+  async componentDidMount() {
+    const data = await api.getTopGames();
+
+    this.setState({
+      isPending: false,
+      games: data.data
+    });
+  }
+
   render() {
+    const { games, isPending } = this.state;
+
     return (
       <div className={app}>
         <section>
@@ -17,10 +37,20 @@ class App extends Component {
         </section>
 
         <Switch>
-          <Route exact path={ALL} component={Main} />
-          <Route exact path={OFFLINE} component={Main} />
-          <Route exact path={ONLINE} component={Main} />
-          <Redirect to={ALL} />
+          <Route
+            exact
+            path={ROOT}
+            render={() => <Games isPending={isPending} games={games} />}
+          />
+          {this.state.games.map(game => (
+            <Route
+              key={game.id}
+              exact
+              path={`${ROOT}/${game.id}`}
+              render={() => <Streams gameId={game.id} />}
+            />
+          ))}
+          {/* TODO: Add Route with dynamic path */}
         </Switch>
       </div>
     );

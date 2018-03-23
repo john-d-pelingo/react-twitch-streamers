@@ -2,18 +2,22 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
 
-import StreamerCard from './StreamerCard';
+import StreamCard from './components/StreamCard';
 
-class Streamers extends Component {
+class Streams extends Component {
   static propTypes = {
-    streamers: PropTypes.array.isRequired
+    streams: PropTypes.array
+  };
+
+  static defaultProps = {
+    streams: []
   };
 
   render() {
     return (
-      <div className={streamers}>
-        {this.props.streamers.map(streamer => (
-          <StreamerCard
+      <div className={streams}>
+        {this.props.streams.map(streamer => (
+          <StreamCard
             key={streamer.id}
             streamDescription={streamer.description}
             streamImage={streamer.image}
@@ -30,7 +34,7 @@ class Streamers extends Component {
 // STYLING
 // =======
 
-const streamers = css`
+const streams = css`
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -38,4 +42,4 @@ const streamers = css`
   margin-top: 15px;
 `;
 
-export default Streamers;
+export default Streams;

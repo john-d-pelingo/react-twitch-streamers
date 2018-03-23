@@ -10,7 +10,6 @@ class Main extends Component {
     streamers: []
   };
 
-  // TODO: Connect with API
   // Fake loading from database
   componentDidMount() {
     this.fakeUploadId = setTimeout(() => {
@@ -86,7 +85,6 @@ class Main extends Component {
   fakeUploadId = null;
 
   render() {
-    // TODO: Try react async-rendering and suspense
     if (this.state.isPending) {
       return <Loader />;
     }

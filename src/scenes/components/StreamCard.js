@@ -4,7 +4,7 @@ import { css, cx } from 'emotion';
 
 import { GRAY, LIGHT_GRAY, MINT_GREEN } from 'src/features/constants/colors';
 
-class StreamerCard extends Component {
+class StreamCard extends Component {
   static propTypes = {
     isOnline: PropTypes.bool,
     streamDescription: PropTypes.string,
@@ -28,7 +28,7 @@ class StreamerCard extends Component {
     } = this.props;
 
     return (
-      <div className={streamerCard}>
+      <div className={streamCard}>
         <span className={cx('status', isOnline && 'online')} />
         <div className="profile">
           <a
@@ -51,7 +51,7 @@ class StreamerCard extends Component {
 // STYLING
 // =======
 
-const streamerCard = css`
+const streamCard = css`
   position: relative;
   min-height: 280px;
   width: 200px;
@@ -102,4 +102,4 @@ const streamerCard = css`
   }
 `;
 
-export default StreamerCard;
+export default StreamCard;

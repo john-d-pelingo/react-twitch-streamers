@@ -6,6 +6,7 @@ import { css } from 'emotion';
 import { DARK_BLACK, TWITCH_PURPLE } from 'src/features/constants/colors';
 import { ALL, OFFLINE, ONLINE } from 'src/features/constants/routes';
 
+// TODO: Wait for Twitch to add more APIs
 class HeaderNav extends Component {
   render() {
     return (
