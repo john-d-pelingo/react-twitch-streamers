@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
 
+import { getThumbnail } from 'src/features/function-utils';
+
 import GameCard from './components/GameCard';
 import Loader from './components/Loader';
 
@@ -26,8 +28,12 @@ class Games extends Component {
         {this.props.games.map(game => (
           <GameCard
             key={game.id}
-            imageLink={game.box_art_url}
+            id={game.id}
             name={game.name}
+            thumbnail={getThumbnail(game.box_art_url, {
+              height: 380,
+              width: 285
+            })}
           />
         ))}
       </main>

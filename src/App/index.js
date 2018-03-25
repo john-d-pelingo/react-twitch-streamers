@@ -5,7 +5,7 @@ import { css } from 'emotion';
 
 import api from 'src/features/api/twitch-service';
 
-import { ROOT } from '../features/constants/routes';
+import { GAME, ROOT } from '../features/constants/routes';
 import HeaderNav from './components/HeaderNav';
 import TwitchLogo from './components/TwitchLogo';
 import Games from '../scenes/Games';
@@ -18,11 +18,11 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    const data = await api.getTopGames();
+    const games = await api.getTopGames();
 
     this.setState({
       isPending: false,
-      games: data.data
+      games: games.data
     });
   }
 
@@ -42,11 +42,11 @@ class App extends Component {
             path={ROOT}
             render={() => <Games isPending={isPending} games={games} />}
           />
-          {this.state.games.map(game => (
+          {games.map(game => (
             <Route
               key={game.id}
               exact
-              path={`${ROOT}/${game.id}`}
+              path={`${GAME}/${game.id}`}
               render={() => <Streams gameId={game.id} />}
             />
           ))}

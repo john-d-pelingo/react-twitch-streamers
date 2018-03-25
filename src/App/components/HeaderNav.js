@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { css } from 'emotion';
 
 import { DARK_BLACK, TWITCH_PURPLE } from 'src/features/constants/colors';
-import { ALL, OFFLINE, ONLINE } from 'src/features/constants/routes';
+import { ALL, OFFLINE, ONLINE, ROOT } from 'src/features/constants/routes';
 
 // TODO: Wait for Twitch to add more APIs
 class HeaderNav extends Component {
@@ -12,13 +12,24 @@ class HeaderNav extends Component {
     return (
       <ul className={headerNav}>
         <li>
-          <NavLink to={ALL}>All</NavLink>
+          <NavLink exact to={ROOT}>
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to={ONLINE}>Online</NavLink>
+          <NavLink exact to={ALL}>
+            All
+          </NavLink>
         </li>
         <li>
-          <NavLink to={OFFLINE}>Offline</NavLink>
+          <NavLink exact to={ONLINE}>
+            Online
+          </NavLink>
+        </li>
+        <li>
+          <NavLink exact to={OFFLINE}>
+            Offline
+          </NavLink>
         </li>
       </ul>
     );

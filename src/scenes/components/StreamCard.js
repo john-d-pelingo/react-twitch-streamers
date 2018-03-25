@@ -7,41 +7,35 @@ import { GRAY, LIGHT_GRAY, MINT_GREEN } from 'src/features/constants/colors';
 class StreamCard extends Component {
   static propTypes = {
     isOnline: PropTypes.bool,
-    streamDescription: PropTypes.string,
-    streamImage: PropTypes.string.isRequired,
-    streamLink: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string.isRequired,
+    title: PropTypes.string,
     username: PropTypes.string.isRequired
   };
 
   static defaultProps = {
-    isOnline: false,
-    streamDescription: ''
+    isOnline: true,
+    title: ''
   };
 
   render() {
-    const {
-      isOnline,
-      streamDescription,
-      streamLink,
-      streamImage,
-      username
-    } = this.props;
+    const { isOnline, link, thumbnail, title, username } = this.props;
 
     return (
       <div className={streamCard}>
         <span className={cx('status', isOnline && 'online')} />
         <div className="profile">
           <a
-            href={streamLink}
+            href={link}
             className="stream-link"
             rel="noreferrer noopener"
             target="_blank"
           >
-            <img src={streamImage} alt={username} className="stream-image" />
+            <img src={thumbnail} alt={username} className="stream-image" />
           </a>
         </div>
         <span className="username">{username}</span>
-        <p className="stream-description">{streamDescription}</p>
+        <p className="stream-description">{title}</p>
       </div>
     );
   }
@@ -66,9 +60,10 @@ const streamCard = css`
 
   .status {
     position: absolute;
-    right: 15px;
-    height: 16px;
-    width: 16px;
+    right: 20px;
+    top: 20px;
+    height: 10px;
+    width: 10px;
     border-radius: 50%;
     background: ${LIGHT_GRAY};
   }
@@ -78,19 +73,20 @@ const streamCard = css`
   }
 
   .profile {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 170px;
+    height: 100px;
+    border-radius: 5px;
     overflow: hidden;
-    margin: 0 auto 15px;
+    margin: 0 auto;
   }
 
   .username {
     display: inline-block;
     font-size: 18px;
+    font-weight: bold;
     color: ${GRAY};
     text-align: center;
-    margin-bottom: 15px;
+    margin: 15px 0;
     width: 100%;
     word-wrap: break-word;
   }

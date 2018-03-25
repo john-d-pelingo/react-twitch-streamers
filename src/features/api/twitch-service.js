@@ -1,11 +1,22 @@
+/* eslint-disable camelcase */
 import axios from 'axios';
 
 import {
+  API_GET_STREAMS,
   API_GET_TOP_GAMES,
   CLIENT_ID
 } from 'src/features/constants/twitch-routes';
 
 const api = {
+  getStreams: ({ first, gameIds }) =>
+    dispatch({
+      url: API_GET_STREAMS,
+      options: {
+        first,
+        game_id: gameIds.join(',')
+      }
+    }),
+
   getTopGames: first =>
     dispatch({
       url: API_GET_TOP_GAMES,
