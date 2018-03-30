@@ -66,10 +66,6 @@ const app = css`
   width: 100%;
   max-width: 1600px;
   padding: 40px 20px;
-
-  @media only screen and (min-width: 730px) {
-    max-width: 720px;
-  }
 `;
 
 export default App;

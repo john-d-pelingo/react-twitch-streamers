@@ -46,7 +46,7 @@ const grayScaleToColoredKeyframe = keyframes`
 `;
 
 const gameCard = css`
-  width: 25%;
+  width: 100%;
 
   &:hover img {
     animation: ${coloredToGrayScaleKeyframe} 150ms;
@@ -56,6 +56,15 @@ const gameCard = css`
   img {
     animation: ${grayScaleToColoredKeyframe} 500ms;
     filter: grayscale(100%);
+  }
+
+  @media only screen and (min-width: 560px) {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  @media only screen and (min-width: 320px) {
+    width: 50%;
   }
 `;
 

@@ -48,12 +48,7 @@ class Games extends Component {
 const main = css`
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  @media only screen and (min-width: 730px) {
-    max-width: 720px;
-  }
+  flex-flow: row wrap;
 `;
 
 export default Games;
