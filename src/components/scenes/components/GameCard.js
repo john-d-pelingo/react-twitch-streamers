@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { css } from 'emotion';
 import { keyframes } from 'react-emotion';
 
-import { GAME } from 'src/features/constants/routes';
+import { GAME } from 'src/constants/routes';
 
 class GameCard extends Component {
   static propTypes = {

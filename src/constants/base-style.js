@@ -1,4 +1,4 @@
-import { CLEAR_BLUE, DARK_BLACK } from './constants/colors';
+import { CLEAR_BLUE, DARK_BLACK } from './colors';
 
 // language=CSS
 export default `

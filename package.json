@@ -23,7 +23,6 @@
     "precommit": "lint-staged",
     "pretty": "prettier --write --config .prettierrc 'src/**/*.{js,jsx,css}'",
     "serve": "serve -so build -p 8080",
-    "server": "json-server server/db.json --config server/json-server.json --routes server/routes.json",
     "start": "cross-env react-scripts start",
     "sweep": "rimraf build coverage",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
@@ -35,8 +34,8 @@
     "emotion": "9.1.0",
     "param-case": "2.1.1",
     "prop-types": "15.6.1",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
+    "react": "16.3.0",
+    "react-dom": "16.3.0",
     "react-emotion": "9.1.0",
     "react-router-dom": "4.2.2"
   },

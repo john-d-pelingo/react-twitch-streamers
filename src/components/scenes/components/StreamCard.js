@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { css, cx } from 'emotion';
 
-import { GRAY, LIGHT_GRAY, MINT_GREEN } from 'src/features/constants/colors';
+import { GRAY, LIGHT_GRAY, MINT_GREEN } from 'src/constants/colors';
 
 class StreamCard extends Component {
   static propTypes = {

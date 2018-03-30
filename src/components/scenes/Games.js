@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
 
-import { getThumbnail } from 'src/features/function-utils';
+import { getThumbnail } from 'src/utils/functions';
 
 import GameCard from './components/GameCard';
 import Loader from './components/Loader';

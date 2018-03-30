@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'emotion';
 import { keyframes } from 'react-emotion';
 
-import { TWITCH_PURPLE } from 'src/features/constants/colors';
+import { TWITCH_PURPLE } from 'src/constants/colors';
 
 const Loader = () => (
   <div className={loader}>

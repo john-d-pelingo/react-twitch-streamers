@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { css } from 'emotion';
 
-import api from 'src/features/api/twitch-service';
+import api from 'src/api/twitch-service';
+import { GAME, ROOT } from 'src/constants/routes';
 
-import { GAME, ROOT } from '../features/constants/routes';
 import HeaderNav from './components/HeaderNav';
 import TwitchLogo from './components/TwitchLogo';
 import Games from '../scenes/Games';

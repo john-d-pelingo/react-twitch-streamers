@@ -1,0 +1,4 @@
+ci:
+  # don't run unmaintained test on any dependencies
+  tests:
+    unmaintained: skip

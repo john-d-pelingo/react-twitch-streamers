@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { css } from 'emotion';
 
-import { DARK_BLACK, TWITCH_PURPLE } from 'src/features/constants/colors';
-import { ALL, OFFLINE, ONLINE, ROOT } from 'src/features/constants/routes';
+import { DARK_BLACK, TWITCH_PURPLE } from 'src/constants/colors';
+import { ALL, OFFLINE, ONLINE, ROOT } from 'src/constants/routes';
 
 // TODO: Wait for Twitch to add more APIs
 class HeaderNav extends Component {

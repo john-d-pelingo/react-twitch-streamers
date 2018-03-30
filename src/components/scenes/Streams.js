@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
 
-import api from 'src/features/api/twitch-service';
-import { getThumbnail, getUsername } from 'src/features/function-utils';
+import api from 'src/api/twitch-service';
+import { getThumbnail, getUsername } from 'src/utils/functions';
 
 import StreamCard from './components/StreamCard';
 import Loader from './components/Loader';

@@ -5,7 +5,7 @@ import {
   API_GET_STREAMS,
   API_GET_TOP_GAMES,
   CLIENT_ID
-} from 'src/features/constants/twitch-routes';
+} from 'src/constants/twitch-routes';
 
 const api = {
   getStreams: ({ first, gameIds }) =>

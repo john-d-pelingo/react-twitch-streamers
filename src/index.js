@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom';
 import { injectGlobal } from 'emotion';
 
-import App from './App';
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
-import baseStyle from './features/base-style';
+import baseStyle from './constants/base-style';
 
 injectGlobal(baseStyle);
 
