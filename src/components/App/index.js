@@ -26,6 +26,10 @@ class App extends Component {
     });
   }
 
+  handleEndScroll = () => {
+    console.log('TODO: Load more games');
+  };
+
   render() {
     const { games, isPending } = this.state;
 
@@ -40,7 +44,13 @@ class App extends Component {
           <Route
             exact
             path={ROOT}
-            render={() => <Games isPending={isPending} games={games} />}
+            render={() => (
+              <Games
+                isPending={isPending}
+                games={games}
+                onEndScroll={this.handleEndScroll}
+              />
+            )}
           />
           {games.map(game => (
             <Route

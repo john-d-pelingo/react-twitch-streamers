@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
+import _flowRight from 'lodash/flowRight';
 
 import { getThumbnail } from 'src/utils/functions';
+import withInfiniteScroll from 'src/hocs/withInfiniteScroll';
 
 import GameCard from './components/GameCard';
 import Loader from './components/Loader';
 
-class Games extends Component {
+class CleanGames extends Component {
   static propTypes = {
     isPending: PropTypes.bool,
     games: PropTypes.array.isRequired
@@ -51,4 +53,21 @@ const main = css`
   flex-flow: row wrap;
 `;
 
+// =======
+// CONNECT
+// =======
+
+const Games = _flowRight(
+  withInfiniteScroll({
+    list: 'games',
+    onEndScroll: 'onEndScroll',
+    wait: 1000
+  })
+)(CleanGames);
+
+// =======
+// EXPORTS
+// =======
+
+export { CleanGames };
 export default Games;
