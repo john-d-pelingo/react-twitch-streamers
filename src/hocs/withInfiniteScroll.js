@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _throttle from 'lodash/throttle';
 
-const withInfiniteScroll = ({ list, onEndScroll, wait }) => Component => {
+const withInfiniteScroll = ({
+  list,
+  onEndScroll,
+  wait = 1000
+}) => Component => {
   class InfiniteScroll extends React.Component {
     static propTypes = {
       [list]: PropTypes.array,
@@ -27,7 +31,7 @@ const withInfiniteScroll = ({ list, onEndScroll, wait }) => Component => {
     handleScroll = () => {
       if (
         window.innerHeight + window.scrollY >=
-          document.body.offsetHeight - 500 &&
+          document.body.offsetHeight - 75 &&
         this.props[list].length
       ) {
         this.props[onEndScroll]();

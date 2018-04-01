@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { css } from 'emotion';
 
 import api from 'src/api/twitch-service';
+import { removeDuplicates } from 'src/utils/functions';
 import { GAME, ROOT } from 'src/constants/routes';
 
 import HeaderNav from './components/HeaderNav';
@@ -13,21 +14,47 @@ import Streams from '../scenes/Streams';
 
 class App extends Component {
   state = {
+    cursor: null,
     isPending: true,
     games: []
   };
 
   async componentDidMount() {
-    const games = await api.getTopGames();
+    try {
+      const response = await api.getTopGames();
 
-    this.setState({
-      isPending: false,
-      games: games.data
-    });
+      this.setState({
+        cursor: response.pagination.cursor,
+        games: response.data,
+        isPending: false
+      });
+    } catch (error) {
+      console.log(error);
+
+      this.setState({
+        isPending: false
+      });
+    }
   }
 
-  handleEndScroll = () => {
-    console.log('TODO: Load more games');
+  handleEndScroll = async () => {
+    try {
+      const { cursor, games } = this.state;
+
+      if (cursor) {
+        const response = await api.getTopGames({ after: cursor });
+
+        this.setState(prevState => ({
+          cursor: response.pagination.cursor,
+          games: [
+            ...prevState.games,
+            ...removeDuplicates(games, response.data, 20)
+          ]
+        }));
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   render() {

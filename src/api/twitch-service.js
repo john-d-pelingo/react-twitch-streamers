@@ -4,11 +4,13 @@ import axios from 'axios';
 import {
   API_GET_STREAMS,
   API_GET_TOP_GAMES,
-  CLIENT_ID
+  CLIENT_ID,
+  GAMES_PER_CALL,
+  STREAMS_PER_CALL
 } from 'src/constants/twitch-routes';
 
 const api = {
-  getStreams: ({ first, gameIds }) =>
+  getStreams: ({ first = STREAMS_PER_CALL, gameIds } = {}) =>
     dispatch({
       url: API_GET_STREAMS,
       options: {
@@ -17,10 +19,11 @@ const api = {
       }
     }),
 
-  getTopGames: first =>
+  getTopGames: ({ after, first = GAMES_PER_CALL } = {}) =>
     dispatch({
       url: API_GET_TOP_GAMES,
       options: {
+        after,
         first
       }
     })

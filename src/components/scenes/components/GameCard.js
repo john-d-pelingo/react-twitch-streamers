@@ -18,7 +18,7 @@ class GameCard extends Component {
     const { id, name, thumbnail } = this.props;
 
     return (
-      <Link to={`${GAME}/${id}`} className={gameCard}>
+      <Link to={`${GAME}/${id}`} className={gameCard} title={name}>
         <img src={thumbnail} alt={name} />
       </Link>
     );
