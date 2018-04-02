@@ -21,11 +21,11 @@ const withInfiniteScroll = ({
       Component.name})`;
 
     componentDidMount() {
-      window.addEventListener('scroll', this.throttledHandleScroll(), false);
+      window.addEventListener('scroll', this.throttledHandleScroll, false);
     }
 
     componentWillUnmount() {
-      window.removeEventListener('scroll', this.throttledHandleScroll(), false);
+      window.removeEventListener('scroll', this.throttledHandleScroll, false);
     }
 
     handleScroll = () => {
@@ -38,9 +38,14 @@ const withInfiniteScroll = ({
       }
     };
 
-    throttledHandleScroll = () => {
-      return _throttle(this.handleScroll, wait);
-    };
+    // window.removeEventListener has to look at all registered event listeners
+    // for the target and event, and does an equality check on the event handler
+    // that was passed to it - if it finds a match, it removes it.
+    //
+    // _throttle returns a new function every time you run it; therefore, the
+    // equality check will always fail and you will be unable to remove the
+    // event listener (without removing all event listeners).
+    throttledHandleScroll = _throttle(this.handleScroll, wait);
 
     render() {
       return <Component {...this.props} />;
