@@ -6,8 +6,8 @@ import _flowRight from 'lodash/flowRight';
 import withInfiniteScroll from 'src/hocs/withInfiniteScroll';
 import { getThumbnail } from 'src/utils/functions';
 
-import GameCard from './components/GameCard';
-import Loader from './components/Loader';
+import GameCard from './GameCard';
+import Loader from './Loader';
 
 class CleanGames extends Component {
   static propTypes = {

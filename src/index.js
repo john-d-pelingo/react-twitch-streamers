@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { injectGlobal } from 'emotion';
 
 import App from './components/App';
@@ -10,9 +10,9 @@ import baseStyle from './constants/base-style';
 injectGlobal(baseStyle);
 
 ReactDOM.render(
-  <HashRouter>
+  <Router>
     <App />
-  </HashRouter>,
+  </Router>,
   document.getElementById('root')
 );
 

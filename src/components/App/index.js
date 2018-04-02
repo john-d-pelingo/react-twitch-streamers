@@ -1,67 +1,17 @@
 /* eslint-disable react/no-did-mount-set-state */
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { css } from 'emotion';
 
-import api from 'src/api/twitch-service';
-import { removeDuplicates } from 'src/utils/functions';
 import { GAME, ROOT } from 'src/constants/routes';
 
 import HeaderNav from './components/HeaderNav';
 import TwitchLogo from './components/TwitchLogo';
-import Games from '../scenes/Games';
+import GamesProvider from '../scenes/GamesProvider';
 import StreamsProvider from '../scenes/StreamsProvider';
 
 class App extends Component {
-  state = {
-    cursor: null,
-    isPending: true,
-    games: []
-  };
-
-  async componentDidMount() {
-    try {
-      const response = await api.getTopGames();
-
-      this.setState({
-        cursor: response.pagination.cursor,
-        games: response.data,
-        isPending: false
-      });
-    } catch (error) {
-      // TODO: Try with componentDidCatch
-      console.error(error);
-
-      this.setState({
-        isPending: false
-      });
-    }
-  }
-
-  handleEndScroll = async () => {
-    try {
-      const { cursor, games } = this.state;
-
-      if (cursor) {
-        const response = await api.getTopGames({ after: cursor });
-
-        this.setState(prevState => ({
-          cursor: response.pagination.cursor,
-          games: [
-            ...prevState.games,
-            ...removeDuplicates(games, response.data, 20)
-          ]
-        }));
-      }
-    } catch (error) {
-      // TODO: Try with componentDidCatch
-      console.error(error);
-    }
-  };
-
   render() {
-    const { games, isPending } = this.state;
-
     return (
       <div className={app}>
         <section>
@@ -69,28 +19,13 @@ class App extends Component {
           <HeaderNav />
         </section>
 
-        <Switch>
-          <Route
-            exact
-            path={ROOT}
-            render={() => (
-              <Games
-                isPending={isPending}
-                games={games}
-                onEndScroll={this.handleEndScroll}
-              />
-            )}
-          />
-          {games.map(game => (
-            <Route
-              key={game.id}
-              exact
-              path={`${GAME}/:${game.id}`}
-              render={() => <StreamsProvider gameId={game.id} />}
-            />
-          ))}
-          {/* TODO: Add Route with dynamic path */}
-        </Switch>
+        <Route exact path={ROOT} component={GamesProvider} />
+        <Route
+          path={`${GAME}/:gameId`}
+          render={({ match }) => (
+            <StreamsProvider gameId={match.params.gameId} />
+          )}
+        />
       </div>
     );
   }
