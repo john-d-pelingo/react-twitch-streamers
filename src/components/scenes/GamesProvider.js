@@ -1,7 +1,7 @@
 /* eslint-disable react/no-did-mount-set-state */
 import React, { Component } from 'react';
 
-import api from 'src/api/twitch-service';
+import api, { cancelTokenSource } from 'src/api/twitch-service';
 import { removeDuplicates } from 'src/utils/functions';
 
 import Games from './components/Games';
@@ -16,18 +16,25 @@ class GamesProvider extends Component {
     try {
       const response = await api.getTopGames();
 
-      this.setState({
-        cursor: response.pagination.cursor,
-        games: response.data,
-        isPending: false
-      });
+      if (response !== undefined) {
+        this.setState({
+          cursor: response.pagination.cursor,
+          games: response.data,
+          isPending: false
+        });
+      }
     } catch (error) {
       // TODO: Try with componentDidCatch
       console.error(error);
+    }
+  }
 
-      this.setState({
-        isPending: false
-      });
+  componentWillUnmount() {
+    if (this.state.isPending) {
+      // TODO: Try with componentDidCatch
+      cancelTokenSource.cancel(
+        `${GamesProvider.name} will unmount while fetching data`
+      );
     }
   }
 

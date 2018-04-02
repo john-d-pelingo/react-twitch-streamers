@@ -9,6 +9,9 @@ import {
   STREAMS_PER_CALL
 } from 'src/constants/twitch-routes';
 
+const { CancelToken } = axios;
+const cancelTokenSource = CancelToken.source();
+
 const api = {
   getStreams: ({ after, first = STREAMS_PER_CALL, gameIds = [] } = {}) =>
     dispatch({
@@ -39,12 +42,14 @@ const dispatch = ({ options, url }, method = 'get') =>
     validateStatus(status) {
       return (status >= 200 && status < 300) || status === 404;
     },
-    ...getDataOrParams(options, method)
+    ...getDataOrParams(options, method),
+    cancelToken: cancelTokenSource.token
   })
     .then(response => response.data)
     // .then(response => response)
+    // TODO: Better Error Handling
     // eslint-disable-next-line no-console
-    .catch(error => console.error(error, new Error().stack));
+    .catch(error => console.error(`[Axios] ${error}`, new Error().stack));
 
 const getDataOrParams = (options, method) => {
   switch (method) {
@@ -72,5 +77,5 @@ const getDataOrParams = (options, method) => {
 // EXPORTS
 // =======
 
-export { dispatch, getDataOrParams };
+export { cancelTokenSource, dispatch, getDataOrParams };
 export default api;

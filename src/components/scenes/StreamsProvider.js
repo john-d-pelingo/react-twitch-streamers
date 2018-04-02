@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import api from 'src/api/twitch-service';
+import api, { cancelTokenSource } from 'src/api/twitch-service';
 import { removeDuplicates } from 'src/utils/functions';
 
 import Streams from './components/Streams';
@@ -21,18 +21,25 @@ class StreamsProvider extends Component {
     try {
       const response = await api.getStreams({ gameIds: [this.props.gameId] });
 
-      this.setState({
-        cursor: response.pagination.cursor,
-        isPending: false,
-        streams: response.data
-      });
+      if (response !== undefined) {
+        this.setState({
+          cursor: response.pagination.cursor,
+          isPending: false,
+          streams: response.data
+        });
+      }
     } catch (error) {
       // TODO: Try with componentDidCatch
       console.error(error);
+    }
+  }
 
-      this.setState({
-        isPending: false
-      });
+  componentWillUnmount() {
+    if (this.state.isPending) {
+      // TODO: Try with componentDidCatch
+      cancelTokenSource.cancel(
+        `${StreamsProvider.name} will unmount while fetching data`
+      );
     }
   }
 
