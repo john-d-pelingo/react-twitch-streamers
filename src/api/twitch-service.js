@@ -10,12 +10,13 @@ import {
 } from 'src/constants/twitch-routes';
 
 const api = {
-  getStreams: ({ first = STREAMS_PER_CALL, gameIds } = {}) =>
+  getStreams: ({ after, first = STREAMS_PER_CALL, gameIds = [] } = {}) =>
     dispatch({
       url: API_GET_STREAMS,
       options: {
+        after,
         first,
-        game_id: gameIds.join(',')
+        game_id: gameIds.length > 0 ? gameIds.join(',') : null
       }
     }),
 

@@ -5,7 +5,7 @@ import _xorBy from 'lodash/xorBy';
 import { GAMES_PER_CALL } from 'src/constants/twitch-routes';
 
 const getThumbnail = (thumbnailUrl, { height, width }) =>
-  thumbnailUrl.replace(/{width}/i, width).replace(/{height}/i, height);
+  thumbnailUrl.replace(/{width}x{height}/i, `${width}x${height}`);
 
 const getUsername = thumbnailUrl => {
   const liveUser = 'live_user_';

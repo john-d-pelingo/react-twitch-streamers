@@ -10,7 +10,7 @@ import { GAME, ROOT } from 'src/constants/routes';
 import HeaderNav from './components/HeaderNav';
 import TwitchLogo from './components/TwitchLogo';
 import Games from '../scenes/Games';
-import Streams from '../scenes/Streams';
+import StreamsProvider from '../scenes/StreamsProvider';
 
 class App extends Component {
   state = {
@@ -29,7 +29,8 @@ class App extends Component {
         isPending: false
       });
     } catch (error) {
-      console.log(error);
+      // TODO: Try with componentDidCatch
+      console.error(error);
 
       this.setState({
         isPending: false
@@ -53,7 +54,8 @@ class App extends Component {
         }));
       }
     } catch (error) {
-      console.log(error);
+      // TODO: Try with componentDidCatch
+      console.error(error);
     }
   };
 
@@ -83,8 +85,8 @@ class App extends Component {
             <Route
               key={game.id}
               exact
-              path={`${GAME}/${game.id}`}
-              render={() => <Streams gameId={game.id} />}
+              path={`${GAME}/:${game.id}`}
+              render={() => <StreamsProvider gameId={game.id} />}
             />
           ))}
           {/* TODO: Add Route with dynamic path */}

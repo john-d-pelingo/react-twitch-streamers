@@ -2,41 +2,33 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
+import _flowRight from 'lodash/flowRight';
 
-import api from 'src/api/twitch-service';
+import withInfiniteScroll from 'src/hocs/withInfiniteScroll';
 import { getThumbnail, getUsername } from 'src/utils/functions';
 
-import StreamCard from './components/StreamCard';
-import Loader from './components/Loader';
+import StreamCard from './StreamCard';
+import Loader from './Loader';
 
-class Streams extends Component {
+class CleanStreams extends Component {
   static propTypes = {
-    gameId: PropTypes.string.isRequired
+    isPending: PropTypes.bool,
+    streams: PropTypes.array.isRequired
   };
 
-  state = {
-    isPending: true,
-    streams: []
+  static defaultProps = {
+    isPending: true
   };
-
-  async componentDidMount() {
-    const streams = await api.getStreams({ gameIds: [this.props.gameId] });
-
-    this.setState({
-      isPending: false,
-      streams: streams.data
-    });
-  }
 
   render() {
     // TODO: Try react async-rendering and suspense
-    if (this.state.isPending) {
+    if (this.props.isPending) {
       return <Loader />;
     }
 
     return (
       <div className={streams}>
-        {this.state.streams.map(streamer => {
+        {this.props.streams.map(streamer => {
           const username = getUsername(streamer.thumbnail_url);
           return (
             <StreamCard
@@ -67,5 +59,21 @@ const streams = css`
   flex-wrap: wrap;
   margin-top: 15px;
 `;
+
+// =======
+// CONNECT
+// =======
+
+const Streams = _flowRight(
+  withInfiniteScroll({
+    list: 'streams',
+    onEndScroll: 'onEndScroll',
+    wait: 1000
+  })
+)(CleanStreams);
+
+// =======
+// EXPORTS
+// =======
 
 export default Streams;

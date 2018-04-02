@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { css } from 'emotion';
 import _flowRight from 'lodash/flowRight';
 
-import { getThumbnail } from 'src/utils/functions';
 import withInfiniteScroll from 'src/hocs/withInfiniteScroll';
+import { getThumbnail } from 'src/utils/functions';
 
 import GameCard from './components/GameCard';
 import Loader from './components/Loader';
