@@ -4,31 +4,22 @@ import { NavLink } from 'react-router-dom';
 import { css } from 'emotion';
 
 import { DARK_BLACK, TWITCH_PURPLE } from 'src/constants/colors';
-import { ALL, OFFLINE, ONLINE, ROOT } from 'src/constants/routes';
+import { ALL, ROOT } from 'src/constants/routes';
 
 // TODO: Wait for Twitch to add more APIs
+// E.g. online and offline streamers
 class HeaderNav extends Component {
   render() {
     return (
       <ul className={headerNav}>
         <li>
           <NavLink exact to={ROOT}>
-            Home
+            Games
           </NavLink>
         </li>
         <li>
           <NavLink exact to={ALL}>
-            All
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact to={ONLINE}>
-            Online
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact to={OFFLINE}>
-            Offline
+            All Streamers
           </NavLink>
         </li>
       </ul>

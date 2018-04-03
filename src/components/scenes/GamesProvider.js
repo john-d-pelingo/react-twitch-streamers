@@ -1,7 +1,7 @@
 /* eslint-disable react/no-did-mount-set-state */
 import React, { Component } from 'react';
 
-import api, { cancelTokenSource } from 'src/api/twitch-service';
+import api /*, { cancelTokenSource }*/ from 'src/api/twitch-service';
 import { removeDuplicates } from 'src/utils/functions';
 
 import Games from './components/Games';
@@ -29,14 +29,14 @@ class GamesProvider extends Component {
     }
   }
 
-  componentWillUnmount() {
-    if (this.state.isPending) {
-      // TODO: Try with componentDidCatch
-      cancelTokenSource.cancel(
-        `${GamesProvider.name} will unmount while fetching data`
-      );
-    }
-  }
+  // componentWillUnmount() {
+  //   if (this.state.isPending) {
+  //     // TODO: Try with componentDidCatch
+  //     cancelTokenSource.cancel(
+  //       `${GamesProvider.name} will unmount while fetching data`
+  //     );
+  //   }
+  // }
 
   handleEndScroll = async () => {
     try {

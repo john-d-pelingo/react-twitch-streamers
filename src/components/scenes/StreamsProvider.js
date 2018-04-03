@@ -2,14 +2,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import api, { cancelTokenSource } from 'src/api/twitch-service';
+import api /*, { cancelTokenSource }*/ from 'src/api/twitch-service';
 import { removeDuplicates } from 'src/utils/functions';
 
 import Streams from './components/Streams';
 
 class StreamsProvider extends Component {
   static propTypes = {
-    gameId: PropTypes.string.isRequired
+    gameId: PropTypes.string
+  };
+
+  static defaultProps = {
+    gameId: ''
   };
 
   state = {
@@ -19,7 +23,8 @@ class StreamsProvider extends Component {
 
   async componentDidMount() {
     try {
-      const response = await api.getStreams({ gameIds: [this.props.gameId] });
+      const gameIds = this.props.gameId !== '' ? [this.props.gameId] : [];
+      const response = await api.getStreams({ gameIds });
 
       if (response !== undefined) {
         this.setState({
@@ -34,23 +39,24 @@ class StreamsProvider extends Component {
     }
   }
 
-  componentWillUnmount() {
-    if (this.state.isPending) {
-      // TODO: Try with componentDidCatch
-      cancelTokenSource.cancel(
-        `${StreamsProvider.name} will unmount while fetching data`
-      );
-    }
-  }
+  // componentWillUnmount() {
+  //   if (this.state.isPending) {
+  //     // TODO: Try with componentDidCatch
+  //     cancelTokenSource.cancel(
+  //       `${StreamsProvider.name} will unmount while fetching data`
+  //     );
+  //   }
+  // }
 
   handleEndScroll = async () => {
     try {
       const { cursor, streams } = this.state;
 
       if (cursor) {
+        const gameIds = this.props.gameId !== '' ? [this.props.gameId] : [];
         const response = await api.getStreams({
           after: cursor,
-          gameIds: [this.props.gameId]
+          gameIds
         });
 
         this.setState(prevState => ({
