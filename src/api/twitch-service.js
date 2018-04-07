@@ -46,9 +46,10 @@ const dispatch = ({ options, url }, method = 'get') =>
     cancelToken: cancelTokenSource.token
   }).then(response => response.data);
 // .then(response => response)
-// TODO: Better Error Handling
+// Error will be handled by the component calling this
+// Since we don't have a state management library, this .catch essentiailly does
+// nothing
 // eslint-disable-next-line no-console
-// Error will be handled by component with componentDidCatch
 // .catch(error => console.error(`[Axios] ${error}`, new Error().stack));
 
 const getDataOrParams = (options, method) => {

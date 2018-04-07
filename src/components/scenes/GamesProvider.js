@@ -25,14 +25,15 @@ class GamesProvider extends Component {
         });
       }
     } catch (error) {
-      // TODO: Try with componentDidCatch
+      // Error happens in a Promise callback which throws and then gets
+      // swallowed. Thus, The ErrorBoundary component cannot catch the error.
+      // See: https://github.com/facebook/react/issues/11334
       console.error(`[${GamesProvider.name} component]: ${error}`);
     }
   }
 
   componentWillUnmount() {
     // if (this.state.isPending) {
-    //   // TODO: Try with componentDidCatch
     //   cancelTokenSource.cancel(
     //     `${GamesProvider.name} will unmount while fetching data`
     //   );
@@ -58,7 +59,9 @@ class GamesProvider extends Component {
         }));
       }
     } catch (error) {
-      // TODO: Try with componentDidCatch
+      // Error happens in a Promise callback which throws and then gets
+      // swallowed. Thus, The ErrorBoundary component cannot catch the error.
+      // See: https://github.com/facebook/react/issues/11334
       console.error(`[${GamesProvider.name} component]: ${error}`);
     }
   };

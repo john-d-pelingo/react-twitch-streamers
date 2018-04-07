@@ -7,28 +7,31 @@ import { ALL, GAME, ROOT } from 'src/constants/routes';
 
 import HeaderNav from './components/HeaderNav';
 import TwitchLogo from './components/TwitchLogo';
+import ErrorBoundary from '../ErrorBoundary';
 import GamesProvider from '../scenes/GamesProvider';
 import StreamsProvider from '../scenes/StreamsProvider';
 
 class App extends Component {
   render() {
     return (
-      <div className={app}>
-        <section>
-          <TwitchLogo />
-          <HeaderNav />
-        </section>
+      <ErrorBoundary>
+        <div className={app}>
+          <section>
+            <TwitchLogo />
+            <HeaderNav />
+          </section>
 
-        <Route exact path={ROOT} component={GamesProvider} />
-        <Route exact path={ALL} component={StreamsProvider} />
-        <Route
-          exact
-          path={`${GAME}/:gameId`}
-          render={({ match }) => (
-            <StreamsProvider gameId={match.params.gameId} />
-          )}
-        />
-      </div>
+          <Route exact path={ROOT} component={GamesProvider} />
+          <Route exact path={ALL} component={StreamsProvider} />
+          <Route
+            exact
+            path={`${GAME}/:gameId`}
+            render={({ match }) => (
+              <StreamsProvider gameId={match.params.gameId} />
+            )}
+          />
+        </div>
+      </ErrorBoundary>
     );
   }
 }
