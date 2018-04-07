@@ -44,12 +44,12 @@ const dispatch = ({ options, url }, method = 'get') =>
     },
     ...getDataOrParams(options, method),
     cancelToken: cancelTokenSource.token
-  })
-    .then(response => response.data)
-    // .then(response => response)
-    // TODO: Better Error Handling
-    // eslint-disable-next-line no-console
-    .catch(error => console.error(`[Axios] ${error}`, new Error().stack));
+  }).then(response => response.data);
+// .then(response => response)
+// TODO: Better Error Handling
+// eslint-disable-next-line no-console
+// Error will be handled by component with componentDidCatch
+// .catch(error => console.error(`[Axios] ${error}`, new Error().stack));
 
 const getDataOrParams = (options, method) => {
   switch (method) {

@@ -7,24 +7,13 @@ import withInfiniteScroll from 'src/hocs/withInfiniteScroll';
 import { getThumbnail } from 'src/utils/functions';
 
 import GameCard from './GameCard';
-import Loader from './Loader';
 
 class CleanGames extends Component {
   static propTypes = {
-    isPending: PropTypes.bool,
     games: PropTypes.array.isRequired
   };
 
-  static defaultProps = {
-    isPending: true
-  };
-
   render() {
-    // TODO: Try react async-rendering and suspense
-    if (this.props.isPending) {
-      return <Loader />;
-    }
-
     return (
       <main className={main}>
         {this.props.games.map(game => (

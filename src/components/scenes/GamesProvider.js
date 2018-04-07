@@ -5,6 +5,7 @@ import api /*, { cancelTokenSource }*/ from 'src/api/twitch-service';
 import { removeDuplicates } from 'src/utils/functions';
 
 import Games from './components/Games';
+import Loader from './components/Loader';
 
 class GamesProvider extends Component {
   state = {
@@ -16,7 +17,7 @@ class GamesProvider extends Component {
     try {
       const response = await api.getTopGames();
 
-      if (response !== undefined) {
+      if (!this.unmounted && response !== undefined) {
         this.setState({
           cursor: response.pagination.cursor,
           games: response.data,
@@ -25,18 +26,21 @@ class GamesProvider extends Component {
       }
     } catch (error) {
       // TODO: Try with componentDidCatch
-      console.error(error);
+      console.error(`[${GamesProvider.name} component]: ${error}`);
     }
   }
 
-  // componentWillUnmount() {
-  //   if (this.state.isPending) {
-  //     // TODO: Try with componentDidCatch
-  //     cancelTokenSource.cancel(
-  //       `${GamesProvider.name} will unmount while fetching data`
-  //     );
-  //   }
-  // }
+  componentWillUnmount() {
+    // if (this.state.isPending) {
+    //   // TODO: Try with componentDidCatch
+    //   cancelTokenSource.cancel(
+    //     `${GamesProvider.name} will unmount while fetching data`
+    //   );
+    // }
+    this.unmounted = true;
+  }
+
+  unmounted = false;
 
   handleEndScroll = async () => {
     try {
@@ -55,12 +59,17 @@ class GamesProvider extends Component {
       }
     } catch (error) {
       // TODO: Try with componentDidCatch
-      console.error(error);
+      console.error(`[${GamesProvider.name} component]: ${error}`);
     }
   };
 
   render() {
     const { games, isPending } = this.state;
+
+    // TODO: Try react async-rendering and suspense
+    if (isPending) {
+      return <Loader />;
+    }
 
     return (
       <Games

@@ -8,24 +8,13 @@ import withInfiniteScroll from 'src/hocs/withInfiniteScroll';
 import { getThumbnail, getUsername } from 'src/utils/functions';
 
 import StreamCard from './StreamCard';
-import Loader from './Loader';
 
 class CleanStreams extends Component {
   static propTypes = {
-    isPending: PropTypes.bool,
     streams: PropTypes.array.isRequired
   };
 
-  static defaultProps = {
-    isPending: true
-  };
-
   render() {
-    // TODO: Try react async-rendering and suspense
-    if (this.props.isPending) {
-      return <Loader />;
-    }
-
     return (
       <div className={streams}>
         {this.props.streams.map(streamer => {

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import api /*, { cancelTokenSource }*/ from 'src/api/twitch-service';
 import { removeDuplicates } from 'src/utils/functions';
 
+import Loader from './components/Loader';
 import Streams from './components/Streams';
 
 class StreamsProvider extends Component {
@@ -26,7 +27,7 @@ class StreamsProvider extends Component {
       const gameIds = this.props.gameId !== '' ? [this.props.gameId] : [];
       const response = await api.getStreams({ gameIds });
 
-      if (response !== undefined) {
+      if (!this.unmounted && response !== undefined) {
         this.setState({
           cursor: response.pagination.cursor,
           isPending: false,
@@ -35,18 +36,21 @@ class StreamsProvider extends Component {
       }
     } catch (error) {
       // TODO: Try with componentDidCatch
-      console.error(error);
+      console.error(`[${StreamsProvider.name} component]: ${error}`);
     }
   }
 
-  // componentWillUnmount() {
-  //   if (this.state.isPending) {
-  //     // TODO: Try with componentDidCatch
-  //     cancelTokenSource.cancel(
-  //       `${StreamsProvider.name} will unmount while fetching data`
-  //     );
-  //   }
-  // }
+  componentWillUnmount() {
+    // if (this.state.isPending) {
+    //   // TODO: Try with componentDidCatch
+    //   cancelTokenSource.cancel(
+    //     `${StreamsProvider.name} will unmount while fetching data`
+    //   );
+    // }
+    this.unmounted = true;
+  }
+
+  unmounted = false;
 
   handleEndScroll = async () => {
     try {
@@ -69,12 +73,17 @@ class StreamsProvider extends Component {
       }
     } catch (error) {
       // TODO: Try with componentDidCatch
-      console.error(error);
+      console.error(`[${StreamsProvider.name} component]: ${error}`);
     }
   };
 
   render() {
     const { isPending, streams } = this.state;
+
+    // TODO: Try react async-rendering and suspense
+    if (isPending) {
+      return <Loader />;
+    }
 
     return (
       <Streams
