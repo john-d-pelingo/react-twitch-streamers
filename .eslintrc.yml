@@ -5,7 +5,8 @@ parser: babel-eslint
 plugins: [
   "react",
   "jsx-a11y",
-  "import"
+  "import",
+  "cypress"
 ]
 
 extends: [
@@ -23,6 +24,7 @@ extends: [
 
 env:
   browser: true
+  cypress/globals: true
   es6: true
   jest: true
   node: true

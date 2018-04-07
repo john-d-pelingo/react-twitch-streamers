@@ -1,5 +1,6 @@
 /build
 /coverage
+/cypress/plugins
 /node_modules
 /public
 /src/registerServiceWorker.js
