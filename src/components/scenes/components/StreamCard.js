@@ -22,7 +22,7 @@ class StreamCard extends Component {
     const { isOnline, link, thumbnail, title, username } = this.props;
 
     return (
-      <div className={streamCard}>
+      <div className={streamCard} data-cy="stream-card">
         <span className={cx('status', isOnline && 'online')} />
         <div className="profile">
           <a

@@ -1,4 +1,4 @@
-describe('React Twitch Streamers', function() {
+describe('App Initialization', function() {
   beforeEach(function() {
     cy.visit('/');
   });

@@ -12,23 +12,27 @@
   "bugs": {
     "url": "https://github.com/john-d-pelingo/react-twitch-streamers/issues"
   },
+  "old-scripts": {
+    "prebuild:ci": "run-s sweep test:c",
+    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "w:test": "cross-env react-scripts test --env=jsdom --no-cache --verbose"
+  },
   "scripts": {
     "build": "cross-env react-scripts build",
     "build:ci": "run-s build",
-    "cy:o": "cypress open",
     "eject": "cross-env react-scripts eject",
     "husky:pre-push": "run-s pretty lint test",
     "lint": "eslint .",
     "nuke": "rimraf node_modules yarn.lock && yarn install",
     "prebuild": "run-s sweep pretty lint test",
-    "prebuild:ci": "run-s sweep test:c",
+    "prebuild:ci": "run-s sweep test",
     "pretty": "prettier --write --config .prettierrc 'src/**/*.{js,jsx,css}'",
     "serve": "serve -so build -p 8080",
     "start": "cross-env react-scripts start",
     "sweep": "rimraf build coverage",
-    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "test": "cypress run",
     "test:c": "cross-env CI=true react-scripts test --env=jsdom --coverage",
-    "w:test": "cross-env react-scripts test --env=jsdom --no-cache --verbose"
+    "w:test": "cypress open"
   },
   "dependencies": {
     "axios": "0.18.0",

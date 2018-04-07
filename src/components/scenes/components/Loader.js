@@ -5,7 +5,7 @@ import { keyframes } from 'react-emotion';
 import { TWITCH_PURPLE } from 'src/constants/colors';
 
 const Loader = () => (
-  <div className={loader}>
+  <div className={loader} data-cy="loader">
     <div className={circle} />
   </div>
 );

@@ -18,7 +18,12 @@ class GameCard extends Component {
     const { id, name, thumbnail } = this.props;
 
     return (
-      <Link to={`${GAME}/${id}`} className={gameCard} title={name}>
+      <Link
+        to={`${GAME}/${id}`}
+        className={gameCard}
+        data-cy="game-card"
+        title={name}
+      >
         <img src={thumbnail} alt={name} />
       </Link>
     );
