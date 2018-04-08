@@ -1,6 +1,6 @@
 describe('List Top Streams', function() {
   beforeEach(function() {
-    cy.visit('/#/all');
+    cy.seedAndVisit('/#/streams');
   });
 
   it('should display 20 streamers', function() {

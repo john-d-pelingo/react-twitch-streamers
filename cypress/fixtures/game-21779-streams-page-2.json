@@ -1,0 +1,260 @@
+{
+  "data": [
+    {
+      "id": "28257591088",
+      "user_id": "78893940",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "NA LCS |  Playoff First place | TL vs. 100 (Bo5) | HUN",
+      "viewer_count": 1009,
+      "started_at": "2018-04-08T19:06:56Z",
+      "language": "hu",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_magyarloltv-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258126240",
+      "user_id": "29750090",
+      "game_id": "21779",
+      "community_ids": [
+        "4cc11eec-b7c2-4ada-8364-5a91d537e4bf",
+        "848d95be-90b3-44a5-b143-6e373754c382"
+      ],
+      "type": "live",
+      "title": "MOBA Paulcannon Soloq | Challenger I (432 LP) | riprendiamoci il challegiourrrr",
+      "viewer_count": 969,
+      "started_at": "2018-04-08T19:46:02Z",
+      "language": "it",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_paoloidolo-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258439120",
+      "user_id": "30357893",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "WERLYB MASTO KING",
+      "viewer_count": 906,
+      "started_at": "2018-04-08T20:10:34Z",
+      "language": "es",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_werlyb-{width}x{height}.jpg"
+    },
+    {
+      "id": "28252799600",
+      "user_id": "45839490",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "7h raizin ",
+      "viewer_count": 902,
+      "started_at": "2018-04-08T11:51:21Z",
+      "language": "ja",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_alfrea-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258889024",
+      "user_id": "59308271",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "the beginning of an adventure... | !video for new video",
+      "viewer_count": 836,
+      "started_at": "2018-04-08T20:47:25Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_tfblade-{width}x{height}.jpg"
+    },
+    {
+      "id": "28253540432",
+      "user_id": "40586609",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "【鳳梨妹】上白金四BO戰 今天第7次",
+      "viewer_count": 766,
+      "started_at": "2018-04-08T13:23:02Z",
+      "language": "zh-tw",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_vickypan-{width}x{height}.jpg"
+    },
+    {
+      "id": "28256050144",
+      "user_id": "132761408",
+      "game_id": "21779",
+      "community_ids": [
+        "391e55bc-4de8-4d20-93a7-27eb0878541b",
+        "848d95be-90b3-44a5-b143-6e373754c382",
+        "afcc9c64-3b9f-432d-8167-b80d14368b98"
+      ],
+      "type": "live",
+      "title": "Yamikaze Challenger Talon | !commands",
+      "viewer_count": 584,
+      "started_at": "2018-04-08T17:18:14Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_yamikazexz-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258032992",
+      "user_id": "27541545",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "[PL] TL vs 100 | NA LCS Finals | Avahir, Peli, TheFakeOne",
+      "viewer_count": 578,
+      "started_at": "2018-04-08T19:38:52Z",
+      "language": "pl",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_lol_pl-{width}x{height}.jpg"
+    },
+    {
+      "id": "28257830352",
+      "user_id": "109709700",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "Westte takılalım ghost yemeyelim | S7 World Rank #1 Zed Challenger TR | youtube.com/zedxsmurf",
+      "viewer_count": 546,
+      "started_at": "2018-04-08T19:24:02Z",
+      "language": "tr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_zedxsmurf_lol-{width}x{height}.jpg"
+    },
+    {
+      "id": "28256547952",
+      "user_id": "29923971",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "【JP】 Rainbrain LP依存症",
+      "viewer_count": 546,
+      "started_at": "2018-04-08T17:55:09Z",
+      "language": "ja",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_rainbrain-{width}x{height}.jpg"
+    },
+    {
+      "id": "28253889120",
+      "user_id": "134729399",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "hahahahahahaah everyones so much better than me not to talk to me",
+      "viewer_count": 520,
+      "started_at": "2018-04-08T14:01:31Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_hitcloak-{width}x{height}.jpg"
+    },
+    {
+      "id": "28259508096",
+      "user_id": "211597015",
+      "game_id": "21779",
+      "community_ids": [
+        "ad14d4fc-1a7c-413f-aa32-4906ef3669ae"
+      ],
+      "type": "live",
+      "title": "Knust (1kilo) - stream e eu ainda não tenho ideia do que estou fazendo",
+      "viewer_count": 459,
+      "started_at": "2018-04-08T21:35:18Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_mcknust-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258255072",
+      "user_id": "93381903",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "NA LCS S8春のプレイオフ決勝実況解説 - TL vs 100T Bo5!!!!!!!",
+      "viewer_count": 453,
+      "started_at": "2018-04-08T19:56:21Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_japanesekoreanug-{width}x{height}.jpg"
+    },
+    {
+      "id": "28256674032",
+      "user_id": "42973421",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "ROAD TO MASTER! PRIMERA VEZ QUE SUBO | CADA 5 SUSCRIPCIONES SORTEO SKIN MISTERIOSA",
+      "viewer_count": 388,
+      "started_at": "2018-04-08T18:03:11Z",
+      "language": "es",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_miniduke-{width}x{height}.jpg"
+    },
+    {
+      "id": "28259209856",
+      "user_id": "153073033",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "Bu gece cok SIkildim gel takil beraz ",
+      "viewer_count": 376,
+      "started_at": "2018-04-08T21:11:20Z",
+      "language": "sv",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_hadesunderworld1-{width}x{height}.jpg"
+    },
+    {
+      "id": "28256376800",
+      "user_id": "60952842",
+      "game_id": "21779",
+      "community_ids": [
+        "59584615-9399-47b0-842e-0c38a48dbe66",
+        "85d34159-ecff-4956-9969-5113ad5d47f9",
+        "ad14d4fc-1a7c-413f-aa32-4906ef3669ae"
+      ],
+      "type": "live",
+      "title": "yo yo yo, hey guys, anime?! рвемся в даймонд!",
+      "viewer_count": 366,
+      "started_at": "2018-04-08T17:42:54Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_jenya_smith-{width}x{height}.jpg"
+    },
+    {
+      "id": "28259283808",
+      "user_id": "52616898",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "Fresh | d1/master jungle climbing my way out of this shitty elo",
+      "viewer_count": 342,
+      "started_at": "2018-04-08T21:17:14Z",
+      "language": "fr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_ifresh_hd-{width}x{height}.jpg"
+    },
+    {
+      "id": "28253486400",
+      "user_id": "138094321",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "하와와 초홍쟝 zi전랭겜인거시어요",
+      "viewer_count": 340,
+      "started_at": "2018-04-08T13:16:46Z",
+      "language": "ko",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_h920103-{width}x{height}.jpg"
+    },
+    {
+      "id": "28259132816",
+      "user_id": "42460336",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "不演了 準備上鑽了",
+      "viewer_count": 276,
+      "started_at": "2018-04-08T21:05:36Z",
+      "language": "zh-tw",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_f22220808-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258781696",
+      "user_id": "39351385",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "Gambit Edward \u003e SoloQ  \u003e EuWest + \u003c3",
+      "viewer_count": 241,
+      "started_at": "2018-04-08T20:38:41Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_edwardlol-{width}x{height}.jpg"
+    }
+  ],
+  "pagination": {
+    "cursor": "eyJiIjp7Ik9mZnNldCI6MH0sImEiOnsiT2Zmc2V0Ijo0MH19"
+  }
+}

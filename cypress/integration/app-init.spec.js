@@ -1,6 +1,6 @@
 describe('App Initialization', function() {
   beforeEach(function() {
-    cy.visit('/');
+    cy.seedAndVisit();
   });
 
   it('should have the correct title', function() {

@@ -1,0 +1,107 @@
+{
+  "data": [
+    {
+      "id": "33214",
+      "name": "Fortnite",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Fortnite-{width}x{height}.jpg"
+    },
+    {
+      "id": "21779",
+      "name": "League of Legends",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-{width}x{height}.jpg"
+    },
+    {
+      "id": "494717",
+      "name": "IRL",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/IRL-{width}x{height}.jpg"
+    },
+    {
+      "id": "493057",
+      "name": "PLAYERUNKNOWN'S BATTLEGROUNDS",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/PLAYERUNKNOWN%27S%20BATTLEGROUNDS-{width}x{height}.jpg"
+    },
+    {
+      "id": "499507",
+      "name": "Welcome to the Game II",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Welcome%20to%20the%20Game%20II-{width}x{height}.jpg"
+    },
+    {
+      "id": "30921",
+      "name": "Rocket League",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Rocket%20League-{width}x{height}.jpg"
+    },
+    {
+      "id": "496712",
+      "name": "Call of Duty: WWII",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Call%20of%20Duty:%20WWII-{width}x{height}.jpg"
+    },
+    {
+      "id": "29595",
+      "name": "Dota 2",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-{width}x{height}.jpg"
+    },
+    {
+      "id": "32399",
+      "name": "Counter-Strike: Global Offensive",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-{width}x{height}.jpg"
+    },
+    {
+      "id": "138585",
+      "name": "Hearthstone",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Hearthstone-{width}x{height}.jpg"
+    },
+    {
+      "id": "488552",
+      "name": "Overwatch",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-{width}x{height}.jpg"
+    },
+    {
+      "id": "18122",
+      "name": "World of Warcraft",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/World%20of%20Warcraft-{width}x{height}.jpg"
+    },
+    {
+      "id": "32982",
+      "name": "Grand Theft Auto V",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Grand%20Theft%20Auto%20V-{width}x{height}.jpg"
+    },
+    {
+      "id": "2748",
+      "name": "Magic: The Gathering",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Magic:%20The%20Gathering-{width}x{height}.jpg"
+    },
+    {
+      "id": "32959",
+      "name": "Heroes of the Storm",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Heroes%20of%20the%20Storm-{width}x{height}.jpg"
+    },
+    {
+      "id": "460630",
+      "name": "Tom Clancy's Rainbow Six: Siege",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Tom%20Clancy%27s%20Rainbow%20Six:%20Siege-{width}x{height}.jpg"
+    },
+    {
+      "id": "459382",
+      "name": "Gears of War 4",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Gears%20of%20War%204-{width}x{height}.jpg"
+    },
+    {
+      "id": "497078",
+      "name": "Far Cry 5",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Far%20Cry%205-{width}x{height}.jpg"
+    },
+    {
+      "id": "488190",
+      "name": "Poker",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Poker-{width}x{height}.jpg"
+    },
+    {
+      "id": "27546",
+      "name": "World of Tanks",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/World%20of%20Tanks-{width}x{height}.jpg"
+    }
+  ],
+  "pagination": {
+    "cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ"
+  }
+}

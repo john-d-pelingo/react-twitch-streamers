@@ -1,0 +1,102 @@
+{
+  "data": [
+    {
+      "id": "27449",
+      "name": "SpyParty",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/SpyParty-{width}x{height}.jpg"
+    },
+    {
+      "id": "743",
+      "name": "Chess",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Chess-{width}x{height}.jpg"
+    },
+    {
+      "id": "495589",
+      "name": "FIFA 18",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/FIFA%2018-{width}x{height}.jpg"
+    },
+    {
+      "id": "490377",
+      "name": "Sea of Thieves",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Sea%20of%20Thieves-{width}x{height}.jpg"
+    },
+    {
+      "id": "29307",
+      "name": "Path of Exile",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Path%20of%20Exile-{width}x{height}.jpg"
+    },
+    {
+      "id": "32345",
+      "name": "Borderlands 2",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Borderlands%202-{width}x{height}.jpg"
+    },
+    {
+      "id": "488191",
+      "name": "Creative",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Creative-{width}x{height}.jpg"
+    },
+    {
+      "id": "14956",
+      "name": "Heroes of Might and Magic V: Tribes of the East",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Heroes%20of%20Might%20and%20Magic%20V:%20Tribes%20of%20the%20East-{width}x{height}.jpg"
+    },
+    {
+      "id": "417752",
+      "name": "Talk Shows",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Talk%20Shows-{width}x{height}.jpg"
+    },
+    {
+      "id": "12924",
+      "name": "Warcraft III: The Frozen Throne",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Warcraft%20III:%20The%20Frozen%20Throne-{width}x{height}.jpg"
+    },
+    {
+      "id": "19357",
+      "name": "Guild Wars 2",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Guild%20Wars%202-{width}x{height}.jpg"
+    },
+    {
+      "id": "9234",
+      "name": "Casino",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Casino-{width}x{height}.jpg"
+    },
+    {
+      "id": "26936",
+      "name": "Music",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Music-{width}x{height}.jpg"
+    },
+    {
+      "id": "33882",
+      "name": "FTL: Faster Than Light",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/FTL:%20Faster%20Than%20Light-{width}x{height}.jpg"
+    },
+    {
+      "id": "497057",
+      "name": "Destiny 2",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Destiny%202-{width}x{height}.jpg"
+    },
+    {
+      "id": "27471",
+      "name": "Minecraft",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Minecraft-{width}x{height}.jpg"
+    },
+    {
+      "id": "65950",
+      "name": "Beyond: Two Souls",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/Beyond:%20Two%20Souls-{width}x{height}.jpg"
+    },
+    {
+      "id": "490422",
+      "name": "StarCraft II",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II-{width}x{height}.jpg"
+    },
+    {
+      "id": "2083",
+      "name": "RuneScape",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/RuneScape-{width}x{height}.jpg"
+    }
+  ],
+  "pagination": {
+    "cursor": "eyJiIjp7Ik9mZnNldCI6MH0sImEiOnsiT2Zmc2V0Ijo0MH19"
+  }
+}

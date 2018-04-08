@@ -15,23 +15,24 @@
   "old-scripts": {
     "prebuild:ci": "run-s sweep test:c",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "test:c": "cross-env CI=true react-scripts test --env=jsdom --coverage",
     "w:test": "cross-env react-scripts test --env=jsdom --no-cache --verbose"
   },
   "scripts": {
     "build": "cross-env react-scripts build",
-    "build:ci": "run-s build",
+    "build:ci": "cross-env react-scripts build",
     "eject": "cross-env react-scripts eject",
-    "husky:pre-push": "run-s pretty lint test",
+    "husky:pre-push": "run-s pretty lint test:ci",
     "lint": "eslint .",
     "nuke": "rimraf node_modules yarn.lock && yarn install",
-    "prebuild": "run-s sweep pretty lint test",
-    "prebuild:ci": "run-s sweep test",
+    "prebuild": "run-s sweep pretty lint test:ci",
+    "prebuild:ci": "run-s sweep test:ci",
     "pretty": "prettier --write --config .prettierrc 'src/**/*.{js,jsx,css}'",
     "serve": "serve -so build -p 8080",
     "start": "cross-env react-scripts start",
     "sweep": "rimraf build coverage",
     "test": "cypress run",
-    "test:c": "cross-env CI=true react-scripts test --env=jsdom --coverage",
+    "test:ci": "run-p --race start test",
     "w:test": "cypress open"
   },
   "dependencies": {

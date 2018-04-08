@@ -1,6 +1,6 @@
 describe('List Famous Games', function() {
   beforeEach(function() {
-    cy.visit('/');
+    cy.seedAndVisit();
   });
 
   it('should display 20 games', function() {
@@ -34,7 +34,7 @@ describe('List Famous Games', function() {
   });
 
   it('should display the next streamers when clicking a game and scrolling to the bottom', function() {
-    // Click the 2st game
+    // Click the 2nd game
     cy
       .get('[data-cy=game-card]')
       .eq(1)

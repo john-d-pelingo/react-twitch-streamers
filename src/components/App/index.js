@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { css } from 'emotion';
 
-import { ALL, GAME, ROOT } from 'src/constants/routes';
+import { STREAMS, GAME, ROOT } from 'src/constants/routes';
 
 import HeaderNav from './components/HeaderNav';
 import TwitchLogo from './components/TwitchLogo';
@@ -22,7 +22,7 @@ class App extends Component {
           </section>
 
           <Route exact path={ROOT} component={GamesProvider} />
-          <Route exact path={ALL} component={StreamsProvider} />
+          <Route exact path={STREAMS} component={StreamsProvider} />
           <Route
             exact
             path={`${GAME}/:gameId`}

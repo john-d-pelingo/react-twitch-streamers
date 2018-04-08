@@ -1,0 +1,262 @@
+{
+  "data": [
+    {
+      "id": "28257143728",
+      "user_id": "36029255",
+      "game_id": "21779",
+      "community_ids": [
+        "ad14d4fc-1a7c-413f-aa32-4906ef3669ae"
+      ],
+      "type": "live",
+      "title": "NA LCS Finals: 100 Thieves vs. Team Liquid",
+      "viewer_count": 310862,
+      "started_at": "2018-04-08T18:36:00Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_riotgames-{width}x{height}.jpg"
+    },
+    {
+      "id": "28257593632",
+      "user_id": "22346597",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "[ESP] FINALES LCS PLAYOFFS NA EN CASTELLANO - LEAGUE OF LEGENDS",
+      "viewer_count": 15008,
+      "started_at": "2018-04-08T19:07:05Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_lvpes-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258084704",
+      "user_id": "71852533",
+      "game_id": "21779",
+      "community_ids": [
+        "229f348c-3bdc-45af-8e66-3e7562f7c2a5"
+      ],
+      "type": "live",
+      "title": "LCS NA Spring 2018 Finale - TL vs 100",
+      "viewer_count": 12501,
+      "started_at": "2018-04-08T19:42:48Z",
+      "language": "fr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogaminglol-{width}x{height}.jpg"
+    },
+    {
+      "id": "28257457616",
+      "user_id": "40336240",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "NA LCS | Finale: TL vs. 100| Spring Split 2018 [GER] #LCSGer",
+      "viewer_count": 11970,
+      "started_at": "2018-04-08T18:58:20Z",
+      "language": "de",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_summonersinnlive-{width}x{height}.jpg"
+    },
+    {
+      "id": "28257844496",
+      "user_id": "25452510",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "[PL] 100 vs TL | Final | NA LCS Spring Split 2018 | Nervarien \u0026 Leo",
+      "viewer_count": 8466,
+      "started_at": "2018-04-08T19:25:04Z",
+      "language": "pl",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_nervarien-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258422960",
+      "user_id": "44099416",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "Rakin MAIN FILL CHALLENGER",
+      "viewer_count": 6618,
+      "started_at": "2018-04-08T20:09:21Z",
+      "language": "pt-br",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_rakin-{width}x{height}.jpg"
+    },
+    {
+      "id": "28256779360",
+      "user_id": "50795214",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "SARDOCHE - LE TRYHARD",
+      "viewer_count": 3147,
+      "started_at": "2018-04-08T18:10:18Z",
+      "language": "fr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_sardochelol-{width}x{height}.jpg"
+    },
+    {
+      "id": "28259609296",
+      "user_id": "38446500",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "REVENANT ||| RANKED SHACO Y LUEGO OUTLAST | Qué te suscribas coño",
+      "viewer_count": 3021,
+      "started_at": "2018-04-08T21:43:35Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_g4g_revenant-{width}x{height}.jpg"
+    },
+    {
+      "id": "28256555088",
+      "user_id": "123020035",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "A une game du platine",
+      "viewer_count": 2974,
+      "started_at": "2018-04-08T17:55:36Z",
+      "language": "fr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_corobizar-{width}x{height}.jpg"
+    },
+    {
+      "id": "28253520912",
+      "user_id": "52203144",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "GRANALIZE - final da LCS NA ---",
+      "viewer_count": 2776,
+      "started_at": "2018-04-08T13:20:54Z",
+      "language": "pt-br",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_gratis150ml-{width}x{height}.jpg"
+    },
+    {
+      "id": "28255817632",
+      "user_id": "18074328",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "Diamond V bot lane - main chat @ destiny.gg/embed/chat",
+      "viewer_count": 2462,
+      "started_at": "2018-04-08T17:00:22Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_destiny-{width}x{height}.jpg"
+    },
+    {
+      "id": "28253782112",
+      "user_id": "52650914",
+      "game_id": "21779",
+      "community_ids": [
+        "4cc11eec-b7c2-4ada-8364-5a91d537e4bf",
+        "770c9b16-0b07-43d6-af79-2c1dbc5a2ced",
+        "fd0eab99-832a-4d7e-8cc0-04d73deb2e54"
+      ],
+      "type": "live",
+      "title": "[ITA] NA LCS 2018 - FINALE - 100 vs TL",
+      "viewer_count": 2010,
+      "started_at": "2018-04-08T13:50:10Z",
+      "language": "it",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_pg_esports-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258114864",
+      "user_id": "30700412",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "[나겜][공식 한국어 중계] 2018 NA LCS Spring FINAL [TL vs 100T]",
+      "viewer_count": 1875,
+      "started_at": "2018-04-08T19:45:09Z",
+      "language": "ko",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_nicegametv-{width}x{height}.jpg"
+    },
+    {
+      "id": "28255838000",
+      "user_id": "44331558",
+      "game_id": "21779",
+      "community_ids": [
+        "ad14d4fc-1a7c-413f-aa32-4906ef3669ae"
+      ],
+      "type": "live",
+      "title": "West SoloQ Tryhard | ŞL Çeyrek Final Analiz Saat 12'de !!",
+      "viewer_count": 1575,
+      "started_at": "2018-04-08T17:01:53Z",
+      "language": "tr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_immortoru-{width}x{height}.jpg"
+    },
+    {
+      "id": "28257808480",
+      "user_id": "29313793",
+      "game_id": "21779",
+      "community_ids": [
+        "e1379454-d29b-4a6f-89da-e21df98d24e4"
+      ],
+      "type": "live",
+      "title": "Финал LCS NA на русском прямой эфир",
+      "viewer_count": 1560,
+      "started_at": "2018-04-08T19:22:28Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_vivilatvia-{width}x{height}.jpg"
+    },
+    {
+      "id": "28254451072",
+      "user_id": "147184645",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "솔랭하겠습니다, 어디까지 가는지 봅시다.",
+      "viewer_count": 1499,
+      "started_at": "2018-04-08T14:59:18Z",
+      "language": "ko",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_hj0514-{width}x{height}.jpg"
+    },
+    {
+      "id": "28256134352",
+      "user_id": "66996733",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "go, d3 70lp",
+      "viewer_count": 1356,
+      "started_at": "2018-04-08T17:24:44Z",
+      "language": "hu",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_adamkissak-{width}x{height}.jpg"
+    },
+    {
+      "id": "28256946608",
+      "user_id": "44019612",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "Keep Positive Summoner",
+      "viewer_count": 1167,
+      "started_at": "2018-04-08T18:22:11Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_anniebot-{width}x{height}.jpg"
+    },
+    {
+      "id": "28257265776",
+      "user_id": "145847456",
+      "game_id": "21779",
+      "community_ids": [],
+      "type": "live",
+      "title": "BTN League of Legends Championship - Semifinals (Illinois vs. Iowa)",
+      "viewer_count": 1162,
+      "started_at": "2018-04-08T18:44:42Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_bigtennetwork-{width}x{height}.jpg"
+    },
+    {
+      "id": "28258311728",
+      "user_id": "29262558",
+      "game_id": "21779",
+      "community_ids": [
+        "227ee534-e395-4c02-b7e9-cc0160a7159c",
+        "b0e7cf13-4131-4f1b-9810-d88087de024b"
+      ],
+      "type": "live",
+      "title": "Loleando, felicidades Mili!",
+      "viewer_count": 1079,
+      "started_at": "2018-04-08T20:00:43Z",
+      "language": "es",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_srchincheto77-{width}x{height}.jpg"
+    }
+  ],
+  "pagination": {
+    "cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ"
+  }
+}
