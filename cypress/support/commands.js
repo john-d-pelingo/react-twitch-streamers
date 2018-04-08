@@ -23,12 +23,14 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
-Cypress.Commands.add('seedAndVisit', function(route = '/') {
+Cypress.Commands.add('seedAndVisit', function(
+  { delay = 0, visitRoute = '/' } = { delay: 0, visitRoute: '/' }
+) {
   cy.server();
 
   // Games Page 1
   cy.route({
-    delay: 100,
+    delay,
     method: 'GET',
     url: 'https://api.twitch.tv/helix/games/top?first=20',
     response: 'fixture:games-page-1'
@@ -36,7 +38,7 @@ Cypress.Commands.add('seedAndVisit', function(route = '/') {
 
   // Games Page 2
   cy.route({
-    delay: 100,
+    delay,
     method: 'GET',
     url:
       'https://api.twitch.tv/helix/games/top?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20',
@@ -45,7 +47,7 @@ Cypress.Commands.add('seedAndVisit', function(route = '/') {
 
   // Streams Page 1
   cy.route({
-    delay: 100,
+    delay,
     method: 'GET',
     url: 'https://api.twitch.tv/helix/streams?first=20',
     response: 'fixture:streams-page-1'
@@ -53,7 +55,7 @@ Cypress.Commands.add('seedAndVisit', function(route = '/') {
 
   // Streams Page 2
   cy.route({
-    delay: 100,
+    delay,
     method: 'GET',
     url:
       'https://api.twitch.tv/helix/streams?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20',
@@ -62,7 +64,7 @@ Cypress.Commands.add('seedAndVisit', function(route = '/') {
 
   // Game 3314 (Fortnite Battle Royale) Streams Page 1
   cy.route({
-    delay: 100,
+    delay,
     method: 'GET',
     url: 'https://api.twitch.tv/helix/streams?first=20&game_id=33214',
     response: 'fixture:game-3314-streams-page-1'
@@ -70,7 +72,7 @@ Cypress.Commands.add('seedAndVisit', function(route = '/') {
 
   // Game 3314 (Fortnite Battle Royale) Streams Page 2
   cy.route({
-    delay: 100,
+    delay,
     method: 'GET',
     url:
       'https://api.twitch.tv/helix/streams?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20&game_id=33214',
@@ -79,7 +81,7 @@ Cypress.Commands.add('seedAndVisit', function(route = '/') {
 
   // Game 21779 (League Of Legends) Streams Page 1
   cy.route({
-    delay: 100,
+    delay,
     method: 'GET',
     url: 'https://api.twitch.tv/helix/streams?first=20&game_id=21779',
     response: 'fixture:game-21779-streams-page-1'
@@ -87,12 +89,12 @@ Cypress.Commands.add('seedAndVisit', function(route = '/') {
 
   // Game 21779 (League Of Legends) Streams Page 2
   cy.route({
-    delay: 100,
+    delay,
     method: 'GET',
     url:
       'https://api.twitch.tv/helix/streams?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20&game_id=21779',
     response: 'fixture:game-21779-streams-page-2'
   });
 
-  cy.visit(route);
+  cy.visit(visitRoute);
 });

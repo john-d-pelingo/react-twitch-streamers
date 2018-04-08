@@ -4,9 +4,6 @@ describe('List Famous Games', function() {
   });
 
   it('should display 20 games', function() {
-    // Loader is displayed
-    cy.get('[data-cy=loader]').should('have.length', 1);
-
     // Games are displayed
     cy.get('[data-cy=game-card]').should('have.length', 20);
   });
@@ -25,9 +22,6 @@ describe('List Famous Games', function() {
       .get('[data-cy=game-card]')
       .eq(0)
       .click();
-
-    // Loader is displayed again
-    cy.get('[data-cy=loader]').should('have.length', 1);
 
     // There are streamers
     cy.get('[data-cy=stream-card]').should('have.length.be.within', 1, 20);

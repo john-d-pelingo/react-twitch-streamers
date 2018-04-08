@@ -1,4 +1,4 @@
-describe('App Initialization', function() {
+describe('TODO: App Initialization', function() {
   beforeEach(function() {
     cy.seedAndVisit();
   });
