@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import { css } from 'emotion';
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
+import { css } from 'emotion'
 
-import { DARK_BLACK, TWITCH_PURPLE } from 'src/constants/colors';
-import { STREAMS, ROOT } from 'src/constants/routes';
+import { DARK_BLACK, TWITCH_PURPLE } from '../../../constants/colors'
+import { STREAMS, ROOT } from '../../../constants/routes'
 
 // TODO: Wait for Twitch to add more APIs
 // E.g. online and offline streamers
@@ -23,7 +22,7 @@ class HeaderNav extends Component {
           </NavLink>
         </li>
       </ul>
-    );
+    )
   }
 }
 
@@ -53,6 +52,6 @@ const headerNav = css`
     font-weight: 700;
     border-bottom: 3px solid ${TWITCH_PURPLE};
   }
-`;
+`
 
-export default HeaderNav;
+export default HeaderNav

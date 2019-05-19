@@ -148,9 +148,7 @@
       "id": "28254463136",
       "user_id": "22480377",
       "game_id": "2748",
-      "community_ids": [
-        "f1e75161-1065-4b2d-9f80-1175626cc791"
-      ],
+      "community_ids": ["f1e75161-1065-4b2d-9f80-1175626cc791"],
       "type": "live",
       "title": "SCG Milwaukee Open: Apr. 7-8 | Day 2 - Modern",
       "viewer_count": 6536,
@@ -189,9 +187,7 @@
       "id": "28253571712",
       "user_id": "86268118",
       "game_id": "499507",
-      "community_ids": [
-        "848d95be-90b3-44a5-b143-6e373754c382"
-      ],
+      "community_ids": ["848d95be-90b3-44a5-b143-6e373754c382"],
       "type": "live",
       "title": "welcome to my life",
       "viewer_count": 5771,

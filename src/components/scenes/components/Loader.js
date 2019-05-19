@@ -1,14 +1,13 @@
-import React from 'react';
-import { css } from 'emotion';
-import { keyframes } from 'react-emotion';
+import React from 'react'
+import { css, keyframes } from 'emotion'
 
-import { TWITCH_PURPLE } from 'src/constants/colors';
+import { TWITCH_PURPLE } from '../../../constants/colors'
 
 const Loader = () => (
   <div className={loader} data-cy="loader">
     <div className={circle} />
   </div>
-);
+)
 
 // =======
 // STYLING
@@ -22,7 +21,7 @@ const circleKeyframe = keyframes`
   50% {
     transform: scale(1.2);
   }
-`;
+`
 
 const loader = css`
   display: flex;
@@ -31,7 +30,7 @@ const loader = css`
   align-items: center;
   width: 100%;
   height: 250px;
-`;
+`
 
 const circle = css`
   height: 13px;
@@ -41,6 +40,6 @@ const circle = css`
   border-radius: 50%;
   margin: 20px 5px;
   animation: ${circleKeyframe} 1s infinite ease-out;
-`;
+`
 
-export default Loader;
+export default Loader

@@ -1,34 +1,33 @@
-/* eslint-disable react/no-did-mount-set-state */
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import api /*, { cancelTokenSource }*/ from 'src/api/twitch-service';
-import { removeDuplicates } from 'src/utils/functions';
+import api /*, { cancelTokenSource }*/ from '../../api/twitch-service'
+import { removeDuplicates } from '../../utils/functions'
 
-import Games from './components/Games';
-import Loader from './components/Loader';
+import Games from './components/Games'
+import Loader from './components/Loader'
 
 class GamesProvider extends Component {
   state = {
     isPending: true,
-    games: []
-  };
+    games: [],
+  }
 
   async componentDidMount() {
     try {
-      const response = await api.getTopGames();
+      const response = await api.getTopGames()
 
       if (!this.unmounted && response !== undefined) {
         this.setState({
           cursor: response.pagination.cursor,
           games: response.data,
-          isPending: false
-        });
+          isPending: false,
+        })
       }
     } catch (error) {
       // Error happens in a Promise callback which throws and then gets
       // swallowed. Thus, The ErrorBoundary component cannot catch the error.
       // See: https://github.com/facebook/react/issues/11334
-      console.error(`[${GamesProvider.name} component]: ${error}`);
+      console.error(`[${GamesProvider.name} component]: ${error}`)
     }
   }
 
@@ -38,40 +37,40 @@ class GamesProvider extends Component {
     //     `${GamesProvider.name} will unmount while fetching data`
     //   );
     // }
-    this.unmounted = true;
+    this.unmounted = true
   }
 
-  unmounted = false;
+  unmounted = false
 
   handleEndScroll = async () => {
     try {
-      const { cursor, games } = this.state;
+      const { cursor, games } = this.state
 
       if (cursor) {
-        const response = await api.getTopGames({ after: cursor });
+        const response = await api.getTopGames({ after: cursor })
 
         this.setState(prevState => ({
           cursor: response.pagination.cursor,
           games: [
             ...prevState.games,
-            ...removeDuplicates(games, response.data, 20)
-          ]
-        }));
+            ...removeDuplicates(games, response.data, 20),
+          ],
+        }))
       }
     } catch (error) {
       // Error happens in a Promise callback which throws and then gets
       // swallowed. Thus, The ErrorBoundary component cannot catch the error.
       // See: https://github.com/facebook/react/issues/11334
-      console.error(`[${GamesProvider.name} component]: ${error}`);
+      console.error(`[${GamesProvider.name} component]: ${error}`)
     }
-  };
+  }
 
   render() {
-    const { games, isPending } = this.state;
+    const { games, isPending } = this.state
 
     // TODO: Try react async-rendering and suspense
     if (isPending) {
-      return <Loader />;
+      return <Loader />
     }
 
     return (
@@ -80,8 +79,8 @@ class GamesProvider extends Component {
         games={games}
         onEndScroll={this.handleEndScroll}
       />
-    );
+    )
   }
 }
 
-export default GamesProvider;
+export default GamesProvider

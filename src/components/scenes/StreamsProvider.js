@@ -1,44 +1,43 @@
-/* eslint-disable react/no-did-mount-set-state */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import api /*, { cancelTokenSource }*/ from 'src/api/twitch-service';
-import { removeDuplicates } from 'src/utils/functions';
+import api /*, { cancelTokenSource }*/ from '../../api/twitch-service'
+import { removeDuplicates } from '../../utils/functions'
 
-import Loader from './components/Loader';
-import Streams from './components/Streams';
+import Loader from './components/Loader'
+import Streams from './components/Streams'
 
 class StreamsProvider extends Component {
   static propTypes = {
-    gameId: PropTypes.string
-  };
+    gameId: PropTypes.string,
+  }
 
   static defaultProps = {
-    gameId: ''
-  };
+    gameId: '',
+  }
 
   state = {
     isPending: true,
-    streams: []
-  };
+    streams: [],
+  }
 
   async componentDidMount() {
     try {
-      const gameIds = this.props.gameId !== '' ? [this.props.gameId] : [];
-      const response = await api.getStreams({ gameIds });
+      const gameIds = this.props.gameId !== '' ? [this.props.gameId] : []
+      const response = await api.getStreams({ gameIds })
 
       if (!this.unmounted && response !== undefined) {
         this.setState({
           cursor: response.pagination.cursor,
           isPending: false,
-          streams: response.data
-        });
+          streams: response.data,
+        })
       }
     } catch (error) {
       // Error happens in a Promise callback which throws and then gets
       // swallowed. Thus, The ErrorBoundary component cannot catch the error.
       // See: https://github.com/facebook/react/issues/11334
-      console.error(`[${StreamsProvider.name} component]: ${error}`);
+      console.error(`[${StreamsProvider.name} component]: ${error}`)
     }
   }
 
@@ -48,44 +47,44 @@ class StreamsProvider extends Component {
     //     `${StreamsProvider.name} will unmount while fetching data`
     //   );
     // }
-    this.unmounted = true;
+    this.unmounted = true
   }
 
-  unmounted = false;
+  unmounted = false
 
   handleEndScroll = async () => {
     try {
-      const { cursor, streams } = this.state;
+      const { cursor, streams } = this.state
 
       if (cursor) {
-        const gameIds = this.props.gameId !== '' ? [this.props.gameId] : [];
+        const gameIds = this.props.gameId !== '' ? [this.props.gameId] : []
         const response = await api.getStreams({
           after: cursor,
-          gameIds
-        });
+          gameIds,
+        })
 
         this.setState(prevState => ({
           cursor: response.pagination.cursor,
           streams: [
             ...prevState.streams,
-            ...removeDuplicates(streams, response.data, 20)
-          ]
-        }));
+            ...removeDuplicates(streams, response.data, 20),
+          ],
+        }))
       }
     } catch (error) {
       // Error happens in a Promise callback which throws and then gets
       // swallowed. Thus, The ErrorBoundary component cannot catch the error.
       // See: https://github.com/facebook/react/issues/11334
-      console.error(`[${StreamsProvider.name} component]: ${error}`);
+      console.error(`[${StreamsProvider.name} component]: ${error}`)
     }
-  };
+  }
 
   render() {
-    const { isPending, streams } = this.state;
+    const { isPending, streams } = this.state
 
     // TODO: Try react async-rendering and suspense
     if (isPending) {
-      return <Loader />;
+      return <Loader />
     }
 
     return (
@@ -94,8 +93,8 @@ class StreamsProvider extends Component {
         onEndScroll={this.handleEndScroll}
         streams={streams}
       />
-    );
+    )
   }
 }
 
-export default StreamsProvider;
+export default StreamsProvider

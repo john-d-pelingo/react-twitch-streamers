@@ -1,21 +1,19 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { css } from 'emotion';
-import { keyframes } from 'react-emotion';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { css, keyframes } from 'emotion'
 
-import { GAME } from 'src/constants/routes';
+import { GAME } from '../../../constants/routes'
 
 class GameCard extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired
-  };
+    thumbnail: PropTypes.string.isRequired,
+  }
 
   render() {
-    const { id, name, thumbnail } = this.props;
+    const { id, name, thumbnail } = this.props
 
     return (
       <Link
@@ -26,7 +24,7 @@ class GameCard extends Component {
       >
         <img src={thumbnail} alt={name} />
       </Link>
-    );
+    )
   }
 }
 
@@ -40,7 +38,7 @@ const coloredToGrayScaleKeyframe = keyframes`
   50%   { filter: grayscale(50%); }
   75%   { filter: grayscale(25%); }
   100%  { filter: grayscale(0%); }
-`;
+`
 
 const grayScaleToColoredKeyframe = keyframes`
   0%    { filter: grayscale(0%); }
@@ -48,7 +46,7 @@ const grayScaleToColoredKeyframe = keyframes`
   50%   { filter: grayscale(50%); }
   75%   { filter: grayscale(75%); }
   100%  { filter: grayscale(100%); }
-`;
+`
 
 const gameCard = css`
   width: 100%;
@@ -71,6 +69,6 @@ const gameCard = css`
   @media only screen and (min-width: 320px) {
     width: 50%;
   }
-`;
+`
 
-export default GameCard;
+export default GameCard

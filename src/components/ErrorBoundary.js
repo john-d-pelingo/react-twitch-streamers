@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { css } from 'emotion';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { css } from 'emotion'
 
 class ErrorBoundary extends Component {
   static propTypes = {
-    children: PropTypes.node.isRequired
-  };
+    children: PropTypes.node.isRequired,
+  }
 
   state = {
     error: null,
-    errorInfo: null
-  };
+    errorInfo: null,
+  }
 
   componentDidCatch(error, errorInfo) {
     // Catch errors in any child components and re-renders with an error message
     this.setState({
       error,
-      errorInfo
-    });
+      errorInfo,
+    })
   }
 
   render() {
-    const { error, errorInfo } = this.state;
+    const { error, errorInfo } = this.state
 
     if (error) {
       // Fallback UI if an error occurs
@@ -32,11 +32,11 @@ class ErrorBoundary extends Component {
           <div>Component Stack Error Details: </div>
           <p className="red">{errorInfo.componentStack}</p>
         </div>
-      );
+      )
     }
 
     // Component normally just renders children
-    return this.props.children;
+    return this.props.children
   }
 }
 
@@ -49,6 +49,6 @@ const errorBoundary = css`
     color: #fe5252;
     font-weight: bold;
   }
-`;
+`
 
-export default ErrorBoundary;
+export default ErrorBoundary

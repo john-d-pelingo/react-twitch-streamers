@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { css, cx } from 'emotion';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { css, cx } from 'emotion'
 
-import { GRAY, LIGHT_GRAY, MINT_GREEN } from 'src/constants/colors';
+import { GRAY, LIGHT_GRAY, MINT_GREEN } from '../../../constants/colors'
 
 class StreamCard extends Component {
   static propTypes = {
@@ -10,16 +10,16 @@ class StreamCard extends Component {
     link: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
     title: PropTypes.string,
-    username: PropTypes.string.isRequired
-  };
+    username: PropTypes.string.isRequired,
+  }
 
   static defaultProps = {
     isOnline: true,
-    title: ''
-  };
+    title: '',
+  }
 
   render() {
-    const { isOnline, link, thumbnail, title, username } = this.props;
+    const { isOnline, link, thumbnail, title, username } = this.props
 
     return (
       <div className={streamCard} data-cy="stream-card">
@@ -37,7 +37,7 @@ class StreamCard extends Component {
         <span className="username">{username}</span>
         <p className="stream-description">{title}</p>
       </div>
-    );
+    )
   }
 }
 
@@ -96,6 +96,6 @@ const streamCard = css`
     margin-bottom: 15px;
     word-wrap: break-word;
   }
-`;
+`
 
-export default StreamCard;
+export default StreamCard

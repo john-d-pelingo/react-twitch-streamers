@@ -1,16 +1,15 @@
-/* eslint-disable camelcase */
-import axios from 'axios';
+import axios from 'axios'
 
 import {
   API_GET_STREAMS,
   API_GET_TOP_GAMES,
   CLIENT_ID,
   GAMES_PER_CALL,
-  STREAMS_PER_CALL
-} from 'src/constants/twitch-routes';
+  STREAMS_PER_CALL,
+} from 'constants/twitch-routes'
 
-const { CancelToken } = axios;
-const cancelTokenSource = CancelToken.source();
+const { CancelToken } = axios
+const cancelTokenSource = CancelToken.source()
 
 const api = {
   getStreams: ({ after, first = STREAMS_PER_CALL, gameIds = [] } = {}) =>
@@ -19,8 +18,8 @@ const api = {
       options: {
         after,
         first,
-        game_id: gameIds.length > 0 ? gameIds.join(',') : null
-      }
+        game_id: gameIds.length > 0 ? gameIds.join(',') : null,
+      },
     }),
 
   getTopGames: ({ after, first = GAMES_PER_CALL } = {}) =>
@@ -28,10 +27,10 @@ const api = {
       url: API_GET_TOP_GAMES,
       options: {
         after,
-        first
-      }
-    })
-};
+        first,
+      },
+    }),
+}
 
 const dispatch = ({ options, url }, method = 'get') =>
   axios({
@@ -40,16 +39,15 @@ const dispatch = ({ options, url }, method = 'get') =>
     responseType: 'json',
     url,
     validateStatus(status) {
-      return (status >= 200 && status < 300) || status === 404;
+      return (status >= 200 && status < 300) || status === 404
     },
     ...getDataOrParams(options, method),
-    cancelToken: cancelTokenSource.token
-  }).then(response => response.data);
+    cancelToken: cancelTokenSource.token,
+  }).then(response => response.data)
 // .then(response => response)
 // Error will be handled by the component calling this
 // Since we don't have a state management library, this .catch essentiailly does
 // nothing
-// eslint-disable-next-line no-console
 // .catch(error => console.error(`[Axios] ${error}`, new Error().stack));
 
 const getDataOrParams = (options, method) => {
@@ -57,26 +55,22 @@ const getDataOrParams = (options, method) => {
     case 'get':
       return {
         params: {
-          ...options
-        }
-      };
+          ...options,
+        },
+      }
 
     case 'post':
     case 'put':
       return {
         data: {
-          ...options
-        }
-      };
+          ...options,
+        },
+      }
 
     default:
-      return {};
+      return {}
   }
-};
+}
 
-// =======
-// EXPORTS
-// =======
-
-export { cancelTokenSource, dispatch, getDataOrParams };
-export default api;
+export { cancelTokenSource, dispatch, getDataOrParams }
+export default api

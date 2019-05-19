@@ -1,4 +1,4 @@
-import { CLEAR_BLUE, DARK_BLACK } from './colors';
+import { CLEAR_BLUE, DARK_BLACK } from './colors'
 
 // language=CSS
 export default `
@@ -209,4 +209,4 @@ export default `
     font-size: 100%;
     font-weight: normal;
   }
-`;
+`

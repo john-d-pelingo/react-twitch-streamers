@@ -1,5 +1,5 @@
-import React from 'react';
-import { css } from 'emotion';
+import React from 'react'
+import { css } from 'emotion'
 
 const TwitchLogo = () => (
   <div className={twitchLogo}>
@@ -21,7 +21,7 @@ const TwitchLogo = () => (
       </svg>
     </a>
   </div>
-);
+)
 
 // =======
 // STYLING
@@ -34,6 +34,6 @@ const twitchLogo = css`
   .svg-logo {
     height: 50px;
   }
-`;
+`
 
-export default TwitchLogo;
+export default TwitchLogo

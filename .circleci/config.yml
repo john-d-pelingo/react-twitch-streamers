@@ -1,14 +1,9 @@
 version: 2
 
-branches:
-  ignore:
-    - gh-pages
-    - master
-
 jobs:
   build:
     docker:
-      - image: circleci/node:9.8.0
+      - image: circleci/node:10.15.1
 
     working_directory: ~/repo
 
@@ -24,9 +19,9 @@ jobs:
 
       - restore_cache:
           keys:
-          - dependency-cache-{{ checksum "package.json" }}
-          # Fallback to using the latest cache if no exact match is found.
-          - dependency-cache-
+            - dependency-cache-{{ checksum "package.json" }}
+            # Fallback to using the latest cache if no exact match is found.
+            - dependency-cache-
 
       - run:
           name: Installing Node Modules
@@ -42,14 +37,11 @@ jobs:
           name: Completing Build
           #command: npm run build:ci
           command: yarn build:ci
-
       #- store_artifacts:
       #    path: test-results.xml
       #    prefix: tests
-
       #- store_artifacts:
       #    path: coverage
       #    prefix: coverage
-
       #- store_test_results:
       #    path: test-results.xml

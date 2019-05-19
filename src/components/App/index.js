@@ -1,15 +1,14 @@
-/* eslint-disable react/no-did-mount-set-state */
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import { css } from 'emotion';
+import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
+import { css } from 'emotion'
 
-import { STREAMS, GAME, ROOT } from 'src/constants/routes';
+import { STREAMS, GAME, ROOT } from '../../constants/routes'
 
-import HeaderNav from './components/HeaderNav';
-import TwitchLogo from './components/TwitchLogo';
-import ErrorBoundary from '../ErrorBoundary';
-import GamesProvider from '../scenes/GamesProvider';
-import StreamsProvider from '../scenes/StreamsProvider';
+import HeaderNav from './components/HeaderNav'
+import TwitchLogo from './components/TwitchLogo'
+import ErrorBoundary from '../ErrorBoundary'
+import GamesProvider from '../scenes/GamesProvider'
+import StreamsProvider from '../scenes/StreamsProvider'
 
 class App extends Component {
   render() {
@@ -32,7 +31,7 @@ class App extends Component {
           />
         </div>
       </ErrorBoundary>
-    );
+    )
   }
 }
 
@@ -45,6 +44,6 @@ const app = css`
   width: 100%;
   max-width: 1600px;
   padding: 40px 20px;
-`;
+`
 
-export default App;
+export default App
