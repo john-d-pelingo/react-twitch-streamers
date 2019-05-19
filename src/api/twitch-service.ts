@@ -6,13 +6,43 @@ import {
   CLIENT_ID,
   GAMES_PER_CALL,
   STREAMS_PER_CALL,
-} from 'constants/twitch-routes'
+} from 'constants/twitchRoutes'
+
+export interface IGetStreamsOptions {
+  after?: string
+  first?: number
+  gameIds?: string[]
+}
+
+export interface IGetTopGamesOptions {
+  after?: string
+  first?: number
+}
+
+export interface IDispatchOptions {
+  options: {
+    after: string
+    first: number
+    game_id?: string | null
+  }
+  url: string
+}
 
 const { CancelToken } = axios
 const cancelTokenSource = CancelToken.source()
 
 const api = {
-  getStreams: ({ after, first = STREAMS_PER_CALL, gameIds = [] } = {}) =>
+  getStreams: (
+    {
+      after = '',
+      first = STREAMS_PER_CALL,
+      gameIds = [],
+    }: IGetStreamsOptions = {
+      after: '',
+      first: STREAMS_PER_CALL,
+      gameIds: [],
+    },
+  ) =>
     dispatch({
       url: API_GET_STREAMS,
       options: {
@@ -22,7 +52,12 @@ const api = {
       },
     }),
 
-  getTopGames: ({ after, first = GAMES_PER_CALL } = {}) =>
+  getTopGames: (
+    { after = '', first = GAMES_PER_CALL }: IGetTopGamesOptions = {
+      after: '',
+      first: STREAMS_PER_CALL,
+    },
+  ) =>
     dispatch({
       url: API_GET_TOP_GAMES,
       options: {
@@ -32,7 +67,7 @@ const api = {
     }),
 }
 
-const dispatch = ({ options, url }, method = 'get') =>
+const dispatch = ({ options, url }: IDispatchOptions, method = 'get') =>
   axios({
     headers: { 'Client-ID': CLIENT_ID },
     method,
@@ -50,7 +85,10 @@ const dispatch = ({ options, url }, method = 'get') =>
 // nothing
 // .catch(error => console.error(`[Axios] ${error}`, new Error().stack));
 
-const getDataOrParams = (options, method) => {
+const getDataOrParams = (
+  options: IDispatchOptions['options'],
+  method: string,
+) => {
   switch (method) {
     case 'get':
       return {
@@ -72,5 +110,4 @@ const getDataOrParams = (options, method) => {
   }
 }
 
-export { cancelTokenSource, dispatch, getDataOrParams }
-export default api
+export { api, cancelTokenSource, dispatch, getDataOrParams }

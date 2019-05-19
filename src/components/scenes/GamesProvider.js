@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import api /*, { cancelTokenSource }*/ from '../../api/twitch-service'
+import { api /*, cancelTokenSource */ } from '../../api/twitch-service'
 import { removeDuplicates } from '../../utils/functions'
 
 import Games from './components/Games'

@@ -1,7 +1,7 @@
 import { CLEAR_BLUE, DARK_BLACK } from './colors'
 
 // language=CSS
-export default `
+export const baseStyles = `
   /* === Reset === */
   html {
     box-sizing: border-box;

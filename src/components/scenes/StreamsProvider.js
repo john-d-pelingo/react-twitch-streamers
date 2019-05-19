@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import api /*, { cancelTokenSource }*/ from '../../api/twitch-service'
+import { api /*, cancelTokenSource */ } from '../../api/twitch-service'
 import { removeDuplicates } from '../../utils/functions'
 
 import Loader from './components/Loader'

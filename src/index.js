@@ -5,9 +5,9 @@ import { injectGlobal } from 'emotion'
 
 import App from './components/App'
 import * as serviceWorker from './serviceWorker'
-import baseStyle from './constants/base-style'
+import { baseStyles } from './constants/baseStyles'
 
-injectGlobal(baseStyle)
+injectGlobal(baseStyles)
 
 ReactDOM.render(
   <Router>
