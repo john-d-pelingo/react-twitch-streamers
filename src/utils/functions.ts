@@ -1,6 +1,8 @@
-import _intersectionBy from 'lodash/intersectionBy'
-import _takeRight from 'lodash/takeRight'
-import _xorBy from 'lodash/xorBy'
+import {
+  intersectionBy as _intersectionBy,
+  takeRight as _takeRight,
+  xorBy as _xorBy,
+} from 'lodash'
 
 import { GAMES_PER_CALL } from 'constants/twitchRoutes'
 

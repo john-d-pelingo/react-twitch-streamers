@@ -2,19 +2,18 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import { css } from 'emotion'
 
+import ErrorBoundary from '../../components/ErrorBoundary'
 import { STREAMS, GAME, ROOT } from '../../constants/routes'
-
+import GamesProvider from '../GamesProvider'
+import StreamsProvider from '../StreamsProvider'
 import HeaderNav from './components/HeaderNav'
 import TwitchLogo from './components/TwitchLogo'
-import ErrorBoundary from '../ErrorBoundary'
-import GamesProvider from '../scenes/GamesProvider'
-import StreamsProvider from '../scenes/StreamsProvider'
 
 class App extends Component {
   render() {
     return (
       <ErrorBoundary>
-        <div className={app}>
+        <div className={appCss}>
           <section>
             <TwitchLogo />
             <HeaderNav />
@@ -35,11 +34,7 @@ class App extends Component {
   }
 }
 
-// =======
-// STYLING
-// =======
-
-const app = css`
+const appCss = css`
   margin: 0 auto;
   width: 100%;
   max-width: 1600px;

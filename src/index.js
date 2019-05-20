@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { HashRouter as Router } from 'react-router-dom'
 import { injectGlobal } from 'emotion'
 
-import App from './components/App'
+import App from './scenes/App'
 import * as serviceWorker from './serviceWorker'
 import { baseStyles } from './constants/baseStyles'
 

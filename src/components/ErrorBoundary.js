@@ -26,7 +26,7 @@ class ErrorBoundary extends Component {
     if (error) {
       // Fallback UI if an error occurs
       return (
-        <div className={errorBoundary}>
+        <div className={errorBoundaryCss}>
           <h2>Oh-no! Something went wrong</h2>
           <p className="red">{error && error.toString()}</p>
           <div>Component Stack Error Details: </div>
@@ -40,11 +40,7 @@ class ErrorBoundary extends Component {
   }
 }
 
-// =======
-// STYLING
-// =======
-
-const errorBoundary = css`
+const errorBoundaryCss = css`
   .red {
     color: #fe5252;
     font-weight: bold;

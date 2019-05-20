@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from 'emotion'
 
 const TwitchLogo = () => (
-  <div className={twitchLogo}>
+  <div className={twitchLogoCss}>
     <a href="https://www.twitch.tv/" rel="noopener noreferrer" target="_blank">
       <svg
         className="svg-logo"
@@ -23,11 +23,7 @@ const TwitchLogo = () => (
   </div>
 )
 
-// =======
-// STYLING
-// =======
-
-const twitchLogo = css`
+const twitchLogoCss = css`
   text-align: center;
   margin-bottom: 20px;
 

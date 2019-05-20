@@ -5,12 +5,11 @@ import { css } from 'emotion'
 import { DARK_BLACK, TWITCH_PURPLE } from '../../../constants/colors'
 import { STREAMS, ROOT } from '../../../constants/routes'
 
-// TODO: Wait for Twitch to add more APIs
-// E.g. online and offline streamers
+// TODO: Wait for Twitch to add more APIs e.g. online and offline streamers
 class HeaderNav extends Component {
   render() {
     return (
-      <ul className={headerNav}>
+      <ul className={headerNavCss}>
         <li>
           <NavLink exact to={ROOT}>
             Games
@@ -26,11 +25,7 @@ class HeaderNav extends Component {
   }
 }
 
-// =======
-// STYLING
-// =======
-
-const headerNav = css`
+const headerNavCss = css`
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
