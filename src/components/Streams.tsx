@@ -41,8 +41,8 @@ const streamsCss = css`
 
 export const StreamsConnected = _flowRight(
   withInfiniteScroll({
-    list: 'streams',
-    onEndScroll: 'onEndScroll',
+    listName: 'streams',
+    onEndScrollName: 'onEndScroll',
     wait: 1000,
   }),
 )(Streams)

@@ -1,29 +1,25 @@
-import React, { Component } from 'react'
+import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import { css } from 'emotion'
 
-import { DARK_BLACK, TWITCH_PURPLE } from '../../../constants/colors'
-import { STREAMS, ROOT } from '../../../constants/routes'
+import { DARK_BLACK, TWITCH_PURPLE } from '../constants/colors'
+import { STREAMS, ROOT } from '../constants/routes'
 
 // TODO: Wait for Twitch to add more APIs e.g. online and offline streamers
-class HeaderNav extends Component {
-  render() {
-    return (
-      <ul className={headerNavCss}>
-        <li>
-          <NavLink exact to={ROOT}>
-            Games
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact to={STREAMS}>
-            Streams
-          </NavLink>
-        </li>
-      </ul>
-    )
-  }
-}
+export const HeaderNav: FC = () => (
+  <ul className={headerNavCss}>
+    <li>
+      <NavLink exact to={ROOT}>
+        Games
+      </NavLink>
+    </li>
+    <li>
+      <NavLink exact to={STREAMS}>
+        Streams
+      </NavLink>
+    </li>
+  </ul>
+)
 
 const headerNavCss = css`
   display: flex;
@@ -48,5 +44,3 @@ const headerNavCss = css`
     border-bottom: 3px solid ${TWITCH_PURPLE};
   }
 `
-
-export default HeaderNav

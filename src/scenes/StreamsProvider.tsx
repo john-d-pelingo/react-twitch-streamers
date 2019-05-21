@@ -1,21 +1,31 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 
 import { api /*, cancelTokenSource */ } from '../api/twitch-service'
 import { Loader } from '../components/Loader'
 import { StreamsConnected } from '../components/Streams'
+import { IStream } from '../entities/stream'
 import { removeDuplicates } from '../utils/functions'
 
-class StreamsProvider extends Component {
-  static propTypes = {
-    gameId: PropTypes.string,
-  }
+interface IStreamsProviderProps {
+  gameId: string
+}
 
+interface IStreamsProviderState {
+  cursor: string | null
+  isPending: boolean
+  streams: IStream[]
+}
+
+export class StreamsProvider extends Component<
+  IStreamsProviderProps,
+  IStreamsProviderState
+> {
   static defaultProps = {
     gameId: '',
   }
 
   state = {
+    cursor: null,
     isPending: true,
     streams: [],
   }
@@ -97,5 +107,3 @@ class StreamsProvider extends Component {
     )
   }
 }
-
-export default StreamsProvider

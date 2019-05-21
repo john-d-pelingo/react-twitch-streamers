@@ -1,24 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component, ComponentType } from 'react'
 import _throttle from 'lodash/throttle'
 
+interface IParameters {
+  listName: string
+  onEndScrollName: string
+  wait: number
+}
+
+// TODO: use hook
+interface IInfiniteScrollProps {
+  [name: string]: any
+}
+
 const withInfiniteScroll = ({
-  list,
-  onEndScroll,
+  listName,
+  onEndScrollName,
   wait = 1000,
-}) => Component => {
-  class InfiniteScroll extends React.Component {
-    static propTypes = {
-      [list]: PropTypes.array,
-      [onEndScroll]: PropTypes.func.isRequired,
-    }
-
-    static defaultProps = {
-      [list]: [],
-    }
-
-    static displayName = `${withInfiniteScroll.name}(${Component.displayName ||
-      Component.name})`
+}: IParameters) => (WrappedComponent: ComponentType) => {
+  class InfiniteScroll extends Component<IInfiniteScrollProps> {
+    static displayName = `${
+      withInfiniteScroll.name
+    }(${WrappedComponent.displayName || WrappedComponent.name})`
 
     componentDidMount() {
       window.addEventListener('scroll', this.throttledHandleScroll, false)
@@ -32,9 +34,9 @@ const withInfiniteScroll = ({
       if (
         window.innerHeight + window.scrollY >=
           document.body.offsetHeight - 75 &&
-        this.props[list].length
+        this.props[listName].length
       ) {
-        this.props[onEndScroll]()
+        this.props[onEndScrollName]()
       }
     }
 
@@ -48,7 +50,7 @@ const withInfiniteScroll = ({
     throttledHandleScroll = _throttle(this.handleScroll, wait)
 
     render() {
-      return <Component {...this.props} />
+      return <WrappedComponent {...this.props} />
     }
   }
 

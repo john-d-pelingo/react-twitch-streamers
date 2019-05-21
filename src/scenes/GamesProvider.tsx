@@ -3,12 +3,20 @@ import React, { Component } from 'react'
 import { api /*, cancelTokenSource */ } from '../api/twitch-service'
 import { GamesConnected } from '../components/Games'
 import { Loader } from '../components/Loader'
+import { IGame } from '../entities/game'
 import { removeDuplicates } from '../utils/functions'
 
-class GamesProvider extends Component {
+interface IGamesProviderState {
+  cursor: string | null
+  games: IGame[]
+  isPending: boolean
+}
+
+export class GamesProvider extends Component<{}, IGamesProviderState> {
   state = {
-    isPending: true,
+    cursor: null,
     games: [],
+    isPending: true,
   }
 
   async componentDidMount() {
@@ -43,6 +51,7 @@ class GamesProvider extends Component {
 
   handleEndScroll = async () => {
     try {
+      console.log('>> this.state', this.state)
       const { cursor, games } = this.state
 
       if (cursor) {
@@ -82,5 +91,3 @@ class GamesProvider extends Component {
     )
   }
 }
-
-export default GamesProvider

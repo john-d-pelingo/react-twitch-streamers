@@ -36,8 +36,8 @@ const main = css`
 
 export const GamesConnected = _flowRight(
   withInfiniteScroll({
-    list: 'games',
-    onEndScroll: 'onEndScroll',
+    listName: 'games',
+    onEndScrollName: 'onEndScroll',
     wait: 1000,
   }),
 )(Games)

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { css } from 'emotion'
 
-const TwitchLogo = () => (
+export const TwitchLogo: FC = () => (
   <div className={twitchLogoCss}>
     <a href="https://www.twitch.tv/" rel="noopener noreferrer" target="_blank">
       <svg
@@ -31,5 +31,3 @@ const twitchLogoCss = css`
     height: 50px;
   }
 `
-
-export default TwitchLogo
