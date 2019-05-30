@@ -28,7 +28,7 @@
     "test:cy": "cypress run",
     "test:cy:ci": "run-p --race start test:cy",
     "test:cy:w": "cypress open",
-    "test:t": "tsc --noEmit",
+    "test:t": "tsc -p ./tsconfig.json --noEmit",
     "test:w": "cross-env react-scripts test --env=jsdom --no-cache --verbose=false",
     "validate": "yarn lint && yarn format:d && yarn test:t",
     "--BUILD--": "",
