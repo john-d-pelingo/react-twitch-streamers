@@ -51,7 +51,6 @@ export class GamesProvider extends Component<{}, IGamesProviderState> {
 
   handleEndScroll = async () => {
     try {
-      console.log('>> this.state', this.state)
       const { cursor, games } = this.state
 
       if (cursor) {
