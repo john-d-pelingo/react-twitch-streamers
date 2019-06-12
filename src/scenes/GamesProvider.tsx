@@ -54,6 +54,7 @@ export class GamesProvider extends Component<{}, IGamesProviderState> {
       const { cursor, games } = this.state
 
       if (cursor) {
+        // @ts-ignore TODO: fix type by using function component
         const response = await api.getTopGames({ after: cursor })
 
         this.setState(prevState => ({

@@ -67,6 +67,7 @@ export class StreamsProvider extends Component<
 
       if (cursor) {
         const gameIds = this.props.gameId !== '' ? [this.props.gameId] : []
+        // @ts-ignore TODO: fix types by using function component
         const response = await api.getStreams({
           after: cursor,
           gameIds,
