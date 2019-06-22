@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "React web app for displaying twitch streamers with the usage of Twitch API",
   "private": false,
-  "homepage": "https://pensive-elion-127e92.netlify.com",
+  "homepage": "https://twitch-streams.netlify.com",
   "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
   "license": "MIT",
   "repository": {
@@ -35,7 +35,7 @@
     "--BUILD--": "",
     "build": "cross-env react-scripts build",
     "build:ci": "yarn build",
-    "prebuild:ci": "run-s validate test test:cy:ci sweep",
+    "prebuild:ci": "run-s validate test sweep",
     "--PRODUCTION--": "",
     "start:prod": "serve -l 8080"
   },

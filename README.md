@@ -2,7 +2,7 @@
 
 🖥 React web app for displaying twitch streamers with the usage of Twitch API
 
-Try the demo at [https://pensive-elion-127e92.netlify.com](https://pensive-elion-127e92.netlify.com).
+Try the demo at [https://twitch-streams.netlify.com](https://twitch-streams.netlify.com).
 
 ## Quick Setup
 
