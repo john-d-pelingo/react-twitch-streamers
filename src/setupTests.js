@@ -1,6 +1,6 @@
 // add some helpful assertions
 // doing this locally will remove type problems
-// import 'jest-dom/extend-expect'
+// import '@testing-library/jest-dom/extend-expect'
 
 // this is basically: afterEach(cleanup)
 import '@testing-library/react/cleanup-after-each'
