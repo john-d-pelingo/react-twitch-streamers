@@ -2,8 +2,6 @@
 // doing this locally will remove type problems
 // import '@testing-library/jest-dom/extend-expect'
 
-// this is basically: afterEach(cleanup)
-import '@testing-library/react/cleanup-after-each'
 import * as emotion from 'emotion'
 import { createSerializer } from 'jest-emotion'
 
