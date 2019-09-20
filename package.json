@@ -64,7 +64,7 @@
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "@types/react-router-dom": "^4.3.3",
-    "cross-env": "^5.2.0",
+    "cross-env": "^6.0.0",
     "cypress": "^3.3.0",
     "husky": "^3.0.2",
     "jest-emotion": "^10.0.11",
