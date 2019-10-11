@@ -3,9 +3,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:12.9.1
+      - image: cypress/base:8
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
 
-    working_directory: ~/repo
+    working_directory: ~/app
 
     steps:
       - checkout
@@ -19,29 +22,22 @@ jobs:
 
       - restore_cache:
           keys:
-            - dependency-cache-{{ checksum "package.json" }}
-            # Fallback to using the latest cache if no exact match is found.
-            - dependency-cache-
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
 
       - run:
-          name: Installing Node Modules
+          name: Installing Dependencies
           #command: npm install
-          command: yarn install
+          command: yarn install --frozen-lockfile
 
       - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          # cache NPM modules and the folder with the Cypress binary
           paths:
-            - ./node_modules
-          key: dependency-cache-{{ checksum "package.json" }}
+            - ~/.cache
 
       - run:
           name: Completing Build
           #command: npm run build:ci
           command: yarn build:ci
-      #- store_artifacts:
-      #    path: test-results.xml
-      #    prefix: tests
-      #- store_artifacts:
-      #    path: coverage
-      #    prefix: coverage
-      #- store_test_results:
-      #    path: test-results.xml
