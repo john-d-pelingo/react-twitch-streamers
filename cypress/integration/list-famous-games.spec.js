@@ -13,7 +13,7 @@ describe('List Famous Games', function() {
     cy.scrollTo('bottom', { easing: 'linear' })
 
     // Next games are displayed
-    cy.get('[data-cy=game-card]').should('have.length.be.within', 21, 40)
+    cy.get('[data-cy=game-card]').should('have.length.be.within', 20, 40)
   })
 
   it('should display between 1 to 20 at most streamers when clicking a game', function() {
