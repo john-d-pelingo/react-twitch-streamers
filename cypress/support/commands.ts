@@ -23,9 +23,21 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
-Cypress.Commands.add('seedAndVisit', function(
-  { delay = 0, visitRoute = '/' } = { delay: 0, visitRoute: '/' },
-) {
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      seedAndVisit: typeof seedAndVisit
+    }
+  }
+}
+
+export const seedAndVisit = (
+  { delay = 0, visitRoute = '/' }: { delay?: number; visitRoute?: string } = {
+    delay: 0,
+    visitRoute: '/',
+  },
+) => {
   cy.server()
 
   // Games Page 1
@@ -97,4 +109,6 @@ Cypress.Commands.add('seedAndVisit', function(
   })
 
   cy.visit(visitRoute)
-})
+}
+
+Cypress.Commands.add('seedAndVisit', seedAndVisit)

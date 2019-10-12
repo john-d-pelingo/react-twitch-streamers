@@ -1,14 +1,14 @@
-describe('List Famous Games', function() {
-  beforeEach(function() {
+describe('List Famous Games', () => {
+  beforeEach(() => {
     cy.seedAndVisit()
   })
 
-  it('should display 20 games', function() {
+  it('should display 20 games', () => {
     // Games are displayed
-    cy.get('[data-cy=game-card]').should('have.length', 20)
+    cy.get('[data-cy=game-card]').should('have.length.be.within', 19, 20)
   })
 
-  it('should display the next games when scrolling at the bottom', function() {
+  it('should display the next games when scrolling at the bottom', () => {
     // Scroll to bottom
     cy.scrollTo('bottom', { easing: 'linear' })
 
@@ -16,7 +16,7 @@ describe('List Famous Games', function() {
     cy.get('[data-cy=game-card]').should('have.length.be.within', 20, 40)
   })
 
-  it('should display between 1 to 20 at most streamers when clicking a game', function() {
+  it('should display between 1 to 20 at most streamers when clicking a game', () => {
     // Click the 1st game
     cy.get('[data-cy=game-card]')
       .eq(0)
@@ -26,7 +26,7 @@ describe('List Famous Games', function() {
     cy.get('[data-cy=stream-card]').should('have.length.be.within', 1, 20)
   })
 
-  it('should display the next streamers when clicking a game and scrolling to the bottom', function() {
+  it('should display the next streamers when clicking a game and scrolling to the bottom', () => {
     // Click the 2nd game
     cy.get('[data-cy=game-card]')
       .eq(1)
@@ -36,6 +36,6 @@ describe('List Famous Games', function() {
     cy.scrollTo('bottom', { easing: 'linear' })
 
     // There are more streamers
-    cy.get('[data-cy=stream-card]').should('have.length.be.within', 21, 40)
+    cy.get('[data-cy=stream-card]').should('have.length.be.within', 19, 40)
   })
 })
