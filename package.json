@@ -80,7 +80,7 @@
     "rimraf": "^3.0.0",
     "serve": "^11.3.2",
     "typescript": "^4.2.4",
-    "webpack": "^5.31.2"
+    "webpack": "^5.35.1"
   },
   "jest": {
     "collectCoverageFrom": [
