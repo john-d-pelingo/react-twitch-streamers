@@ -4,7 +4,11 @@
   "description": "React web app for displaying twitch streamers with the usage of Twitch API",
   "private": false,
   "homepage": "https://twitch-streams.netlify.com",
-  "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
+  "author": {
+    "email": "johndarrylpelingo@gmail.com",
+    "name": "John Darryl Pelingo",
+    "url": "https://johndpelingo.com"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,7 +18,7 @@
     "url": "https://github.com/john-d-pelingo/react-twitch-streamers/issues"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "scripts": {
     "--DEVELOPMENT--": "",
