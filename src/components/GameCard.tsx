@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
-import { Link } from 'react-router-dom'
 import { css, keyframes } from 'emotion'
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
 
 import { GAME } from '../constants/routes'
 

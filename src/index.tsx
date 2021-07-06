@@ -1,11 +1,10 @@
-import React from 'react'
+import { injectGlobal } from 'emotion'
 import ReactDOM from 'react-dom'
 import { HashRouter as Router } from 'react-router-dom'
-import { injectGlobal } from 'emotion'
 
+import { baseStyles } from './constants/baseStyles'
 import { App } from './scenes/App'
 import * as serviceWorker from './serviceWorker'
-import { baseStyles } from './constants/baseStyles'
 
 injectGlobal(baseStyles)
 

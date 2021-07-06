@@ -1,5 +1,5 @@
-import React, { Component, ErrorInfo } from 'react'
 import { css } from 'emotion'
+import { Component, ErrorInfo } from 'react'
 
 interface IErrorBoundaryState {
   error: Error | null
@@ -28,10 +28,10 @@ export class ErrorBoundary extends Component<{}, IErrorBoundaryState> {
       return (
         <div className={errorBoundaryCss}>
           <h2>Oh-no! Something went wrong</h2>
-          <p className="red">{((error as unknown) as Error).toString()}</p>
+          <p className="red">{(error as unknown as Error).toString()}</p>
           <div>Component Stack Error Details: </div>
           <p className="red">
-            {((errorInfo as unknown) as ErrorInfo).componentStack}
+            {(errorInfo as unknown as ErrorInfo).componentStack}
           </p>
         </div>
       )

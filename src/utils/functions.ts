@@ -4,6 +4,7 @@ import {
   xorBy as _xorBy,
 } from 'lodash'
 
+// TODO: use ~ for route to know that it's not from node_modules
 import { GAMES_PER_CALL } from 'constants/twitchRoutes'
 
 const getThumbnail = (

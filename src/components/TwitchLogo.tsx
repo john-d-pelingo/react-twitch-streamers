@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
 import { css } from 'emotion'
+import { FC } from 'react'
 
 export const TwitchLogo: FC = () => (
   <div className={twitchLogoCss}>

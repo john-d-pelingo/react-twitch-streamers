@@ -8,6 +8,6 @@ import { createSerializer } from 'jest-emotion'
 expect.addSnapshotSerializer(createSerializer(emotion))
 
 // Fail tests on any warning
-console.error = message => {
+console.error = (message) => {
   throw new Error(message)
 }

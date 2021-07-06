@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 import {
   API_GET_STREAMS,
   API_GET_TOP_GAMES,
@@ -7,6 +5,8 @@ import {
   GAMES_PER_CALL,
   STREAMS_PER_CALL,
 } from 'constants/twitchRoutes'
+
+import axios from 'axios'
 
 export interface IGetStreamsOptions {
   after?: string

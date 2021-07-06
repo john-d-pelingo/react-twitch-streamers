@@ -52,8 +52,7 @@ export const seedAndVisit = (
   cy.route({
     delay,
     method: 'GET',
-    url:
-      'https://api.twitch.tv/helix/games/top?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20',
+    url: 'https://api.twitch.tv/helix/games/top?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20',
     response: 'fixture:games-page-2',
   })
 
@@ -69,8 +68,7 @@ export const seedAndVisit = (
   cy.route({
     delay,
     method: 'GET',
-    url:
-      'https://api.twitch.tv/helix/streams?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20',
+    url: 'https://api.twitch.tv/helix/streams?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20',
     response: 'fixture:streams-page-2',
   })
 
@@ -86,8 +84,7 @@ export const seedAndVisit = (
   cy.route({
     delay,
     method: 'GET',
-    url:
-      'https://api.twitch.tv/helix/streams?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20&game_id=33214',
+    url: 'https://api.twitch.tv/helix/streams?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20&game_id=33214',
     response: 'fixture:game-3314-streams-page-2',
   })
 
@@ -103,8 +100,7 @@ export const seedAndVisit = (
   cy.route({
     delay,
     method: 'GET',
-    url:
-      'https://api.twitch.tv/helix/streams?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20&game_id=21779',
+    url: 'https://api.twitch.tv/helix/streams?after=eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ&first=20&game_id=21779',
     response: 'fixture:game-21779-streams-page-2',
   })
 

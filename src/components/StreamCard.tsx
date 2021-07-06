@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
 import { css, cx } from 'emotion'
+import { FC } from 'react'
 
 import { GRAY, LIGHT_GRAY, MINT_GREEN } from '../constants/colors'
 

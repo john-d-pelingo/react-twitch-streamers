@@ -18,9 +18,7 @@ describe('List Famous Games', () => {
 
   it('should display between 1 to 20 at most streamers when clicking a game', () => {
     // Click the 1st game
-    cy.get('[data-cy=game-card]')
-      .eq(0)
-      .click()
+    cy.get('[data-cy=game-card]').eq(0).click()
 
     // There are streamers
     cy.get('[data-cy=stream-card]').should('have.length.be.within', 1, 20)
@@ -28,9 +26,7 @@ describe('List Famous Games', () => {
 
   it('should display the next streamers when clicking a game and scrolling to the bottom', () => {
     // Click the 2nd game
-    cy.get('[data-cy=game-card]')
-      .eq(1)
-      .click()
+    cy.get('[data-cy=game-card]').eq(1).click()
 
     // Scroll to bottom
     cy.scrollTo('bottom', { easing: 'linear' })

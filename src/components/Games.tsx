@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
 import { css } from 'emotion'
 import _flowRight from 'lodash/flowRight'
+import { FC } from 'react'
 
 import { IGame } from '../entities/game'
 import withInfiniteScroll from '../hocs/withInfiniteScroll'
@@ -14,7 +14,7 @@ interface ICleanGamesProps {
 
 export const Games: FC<ICleanGamesProps> = ({ games }) => (
   <main className={main}>
-    {games.map(game => (
+    {games.map((game) => (
       <GameCard
         key={game.id}
         id={game.id}

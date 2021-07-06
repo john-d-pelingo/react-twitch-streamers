@@ -1,9 +1,9 @@
-import React from 'react'
 import { css, keyframes } from 'emotion'
+import { FC } from 'react'
 
 import { TWITCH_PURPLE } from '../constants/colors'
 
-export const Loader: React.FC = () => (
+export const Loader: FC = () => (
   <div className={loaderCss} data-cy="loader">
     <div className={circleCss} />
   </div>
@@ -13,7 +13,7 @@ const circleKeyframeCss = keyframes`
   0%, 100% {
     transform: scale(0.8);
   }
-  
+
   50% {
     transform: scale(1.2);
   }

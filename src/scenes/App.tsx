@@ -1,11 +1,12 @@
-import React, { FC } from 'react'
-import { Route } from 'react-router-dom'
 import { css } from 'emotion'
+import { FC } from 'react'
+import { Route } from 'react-router-dom'
 
 import { ErrorBoundary } from '../components/ErrorBoundary'
 import { HeaderNav } from '../components/HeaderNav'
 import { TwitchLogo } from '../components/TwitchLogo'
 import { STREAMS, GAME, ROOT } from '../constants/routes'
+
 import { GamesProvider } from './GamesProvider'
 import { StreamsProvider } from './StreamsProvider'
 

@@ -1,10 +1,11 @@
-import React, { FC } from 'react'
 import { css } from 'emotion'
 import _flowRight from 'lodash/flowRight'
+import { FC } from 'react'
 
 import { IStream } from '../entities/stream'
 import withInfiniteScroll from '../hocs/withInfiniteScroll'
 import { getThumbnail, getUsername } from '../utils/functions'
+
 import { StreamCard } from './StreamCard'
 
 interface IStreamsProps {
@@ -13,7 +14,7 @@ interface IStreamsProps {
 
 export const Streams: FC<IStreamsProps> = ({ streams }) => (
   <div className={streamsCss}>
-    {streams.map(streamer => {
+    {streams.map((streamer) => {
       const username = getUsername(streamer.thumbnail_url)
       return (
         <StreamCard

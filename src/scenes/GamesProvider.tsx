@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 import { api /*, cancelTokenSource */ } from '../api/twitch-service'
 import { GamesConnected } from '../components/Games'
@@ -57,7 +57,7 @@ export class GamesProvider extends Component<{}, IGamesProviderState> {
         // @ts-ignore TODO: fix type by using function component
         const response = await api.getTopGames({ after: cursor })
 
-        this.setState(prevState => ({
+        this.setState((prevState) => ({
           cursor: response.pagination.cursor,
           games: [
             ...prevState.games,
