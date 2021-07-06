@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { RouteComponentProps } from 'react-router'
 
 import { api /*, cancelTokenSource */ } from '../api/twitch-service'
 import { GamesConnected } from '../components/Games'
@@ -12,7 +13,10 @@ interface IGamesProviderState {
   isPending: boolean
 }
 
-export class GamesProvider extends Component<{}, IGamesProviderState> {
+export class GamesProvider extends Component<
+  RouteComponentProps,
+  IGamesProviderState
+> {
   state = {
     cursor: null,
     games: [],
@@ -54,8 +58,8 @@ export class GamesProvider extends Component<{}, IGamesProviderState> {
       const { cursor, games } = this.state
 
       if (cursor) {
-        // @ts-ignore TODO: fix type by using function component
-        const response = await api.getTopGames({ after: cursor })
+        // TODO: fix type by using function component
+        const response = await api.getTopGames({ after: cursor ?? undefined })
 
         this.setState((prevState) => ({
           cursor: response.pagination.cursor,

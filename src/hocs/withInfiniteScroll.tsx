@@ -9,10 +9,12 @@ interface IParameters {
 
 // TODO: use hook
 interface IInfiniteScrollProps {
+  // TODO: fix any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [name: string]: any
 }
 
-const withInfiniteScroll =
+export const withInfiniteScroll =
   ({ listName, onEndScrollName, wait = 1000 }: IParameters) =>
   (WrappedComponent: ComponentType) => {
     class InfiniteScroll extends Component<IInfiniteScrollProps> {
@@ -54,5 +56,3 @@ const withInfiniteScroll =
 
     return InfiniteScroll
   }
-
-export default withInfiniteScroll

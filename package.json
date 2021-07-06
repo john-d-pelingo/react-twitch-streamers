@@ -22,31 +22,30 @@
   },
   "prettier": "@jdp-dev/prettier-config",
   "scripts": {
-    "--DEVELOPMENT--": "",
+    "--DEVELOPMENT--": "echo \"--DEVELOPMENT--\" && exit 1",
+    "dev": "react-scripts start",
     "eject": "react-scripts eject",
-    "format": "yarn pretty --write",
-    "format:d": "yarn pretty --list-different",
-    "lint:staged": "lint-staged",
-    "nuke": "rimraf node_modules && yarn install",
-    "posttest": "yarn test:t",
+    "format": "prettier --write 'src/**/*.{css,js,ts,tsx}' '**/*.md'",
+    "lint": "eslint ./src/ --ext .js,.ts,.tsx --max-warnings 0 --report-unused-disable-directives",
+    "postinstall": "husky install",
     "posttest:cy": "yarn test:cy:t",
-    "pretty": "prettier --config .prettierrc 'src/**/*.{css,js,ts,tsx}' 'cypress/**/*.{js,json,ts,tsx}'",
-    "start": "react-scripts start",
+    "snyk-protect": "snyk protect",
     "sweep": "rimraf build coverage",
     "test": "CI=true react-scripts test --env=jsdom --no-cache",
+    "test:ci": "CI=true react-scripts test --env=jsdom --no-cache --coverage",
     "test:cy": "cypress run",
     "test:cy:ci": "run-p --race start test:cy",
+    "test:cy:t": "tsc -p ./cypress/tsconfig.json --noEmit",
     "test:cy:w": "cypress open",
     "test:t": "tsc -p ./tsconfig.json --noEmit",
-    "test:cy:t": "tsc -p ./cypress/tsconfig.json --noEmit",
     "test:w": "react-scripts test --env=jsdom --no-cache --verbose=false",
-    "validate": "yarn format:d",
-    "--BUILD--": "",
+    "--BUILD--": "echo \"--BUILD--\" && exit 1",
     "build": "react-scripts build",
     "build:ci": "react-scripts build",
-    "prebuild": "run-s sweep validate test",
-    "prebuild:ci": "run-s sweep validate test test:cy:ci",
-    "--PRODUCTION--": "",
+    "prebuild": "run-s sweep lint test:t test",
+    "prebuild:ci": "run-s sweep lint test:t test:ci test:cy:ci",
+    "--PRODUCTION--": "echo \"--PRODUCTION--\" && exit 1",
+    "release": "standard-version",
     "start:prod": "serve -l 8080"
   },
   "keywords": [
@@ -63,6 +62,8 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
     "@bahmutov/add-typescript-to-cypress": "^2.1.2",
     "@jdp-dev/commitlint-config": "^0.0.18",
     "@jdp-dev/eslint-config-typescript-react": "^0.0.18",
@@ -72,13 +73,11 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@types/jest": "^26.0.23",
-    "@types/jquery": "^3.5.5",
     "@types/lodash": "^4.14.170",
     "@types/node": "^16.0.0",
     "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
     "@types/react-router-dom": "^5.1.7",
-    "@types/testing-library__cypress": "^5.0.9",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "cypress": "^6.0.0",
@@ -94,9 +93,10 @@
     "lint-staged": "^11.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
-    "react-scripts": "3.4.4",
+    "react-scripts": "^4.0.3",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
+    "snyk": "^1.655.0",
     "serve": "^12.0.0",
     "typescript": "^4.3.5",
     "webpack": "^5.42.1"
@@ -104,6 +104,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
+      "!src/*.{ts,tsx}",
       "!<rootDir>/node_modules/"
     ]
   },
@@ -118,5 +119,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "snyk": true
 }

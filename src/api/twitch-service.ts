@@ -6,7 +6,7 @@ import {
   STREAMS_PER_CALL,
 } from 'constants/twitchRoutes'
 
-import axios from 'axios'
+import axios, { Method } from 'axios'
 
 export interface IGetStreamsOptions {
   after?: string
@@ -67,10 +67,15 @@ const api = {
     }),
 }
 
-const dispatch = ({ options, url }: IDispatchOptions, method = 'get') =>
-  // @ts-ignore TODO: fix types
+const dispatch = ({ options, url }: IDispatchOptions, method: Method = 'get') =>
   axios({
-    headers: { 'Client-ID': CLIENT_ID },
+    headers: {
+      'Client-ID': CLIENT_ID,
+      // TODO: Need to a new auth header
+      // New auth header: https://dev.twitch.tv/docs/api/migration#authentication-tokens-and-headers
+      // Getting the bearer token: https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#oauth-client-credentials-flow
+      // Scopes: https://dev.twitch.tv/docs/authentication/#scopes
+    },
     method,
     responseType: 'json',
     url,
@@ -79,7 +84,8 @@ const dispatch = ({ options, url }: IDispatchOptions, method = 'get') =>
     },
     ...getDataOrParams(options, method),
     cancelToken: cancelTokenSource.token,
-    // TODO: fix types
+    // TODO: fix any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }).then((response: any) => response.data)
 // .then(response => response)
 // Error will be handled by the component calling this

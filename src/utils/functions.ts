@@ -1,11 +1,11 @@
+// TODO: use ~ for route to know that it's not from node_modules
+import { GAMES_PER_CALL } from 'constants/twitchRoutes'
+
 import {
   intersectionBy as _intersectionBy,
   takeRight as _takeRight,
   xorBy as _xorBy,
 } from 'lodash'
-
-// TODO: use ~ for route to know that it's not from node_modules
-import { GAMES_PER_CALL } from 'constants/twitchRoutes'
 
 const getThumbnail = (
   thumbnailUrl: string,
@@ -25,9 +25,12 @@ const getUsername = (thumbnailUrl: string) => {
   )
 }
 
-// TODO: type any
 const removeDuplicates = (
+  // TODO: fix any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   oldData: any[],
+  // TODO: fix any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   newData: any[],
   upTo = GAMES_PER_CALL,
 ) => {

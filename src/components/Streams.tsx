@@ -3,7 +3,7 @@ import _flowRight from 'lodash/flowRight'
 import { FC } from 'react'
 
 import { IStream } from '../entities/stream'
-import withInfiniteScroll from '../hocs/withInfiniteScroll'
+import { withInfiniteScroll } from '../hocs/withInfiniteScroll'
 import { getThumbnail, getUsername } from '../utils/functions'
 
 import { StreamCard } from './StreamCard'

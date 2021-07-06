@@ -3,7 +3,7 @@ import _flowRight from 'lodash/flowRight'
 import { FC } from 'react'
 
 import { IGame } from '../entities/game'
-import withInfiniteScroll from '../hocs/withInfiniteScroll'
+import { withInfiniteScroll } from '../hocs/withInfiniteScroll'
 import { getThumbnail } from '../utils/functions'
 
 import { GameCard } from './GameCard'

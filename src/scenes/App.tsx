@@ -23,7 +23,13 @@ export const App: FC = () => (
       <Route
         exact
         path={`${GAME}/:gameId`}
-        render={({ match }) => <StreamsProvider gameId={match.params.gameId} />}
+        render={({ match, ...rest }) => (
+          <StreamsProvider
+            gameId={match.params.gameId}
+            match={match}
+            {...rest}
+          />
+        )}
       />
     </div>
   </ErrorBoundary>

@@ -1,6 +1,6 @@
+import { css } from 'emotion'
 import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
-import { css } from 'emotion'
 
 import { DARK_BLACK, TWITCH_PURPLE } from '../constants/colors'
 import { STREAMS, ROOT } from '../constants/routes'

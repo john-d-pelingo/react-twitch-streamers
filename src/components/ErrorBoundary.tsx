@@ -1,12 +1,17 @@
 import { css } from 'emotion'
-import { Component, ErrorInfo } from 'react'
+import { Component, ErrorInfo, ReactNode } from 'react'
 
 interface IErrorBoundaryState {
   error: Error | null
   errorInfo: ErrorInfo | null
 }
 
-export class ErrorBoundary extends Component<{}, IErrorBoundaryState> {
+export class ErrorBoundary extends Component<
+  {
+    children?: ReactNode
+  },
+  IErrorBoundaryState
+> {
   state = {
     error: null,
     errorInfo: null,

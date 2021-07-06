@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { RouteComponentProps } from 'react-router'
 
 import { api /*, cancelTokenSource */ } from '../api/twitch-service'
 import { Loader } from '../components/Loader'
@@ -6,9 +7,9 @@ import { StreamsConnected } from '../components/Streams'
 import { IStream } from '../entities/stream'
 import { removeDuplicates } from '../utils/functions'
 
-interface IStreamsProviderProps {
+type IStreamsProviderProps = {
   gameId: string
-}
+} & RouteComponentProps
 
 interface IStreamsProviderState {
   cursor: string | null
