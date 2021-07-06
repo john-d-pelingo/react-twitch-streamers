@@ -1,6 +1,6 @@
 {
   "name": "react-twitch-streamers",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React web app for displaying twitch streamers with the usage of Twitch API",
   "private": false,
   "homepage": "https://twitch-streams.netlify.com",
