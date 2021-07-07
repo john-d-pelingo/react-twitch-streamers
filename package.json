@@ -34,7 +34,7 @@
     "test": "CI=true react-scripts test --env=jsdom --no-cache",
     "test:ci": "CI=true react-scripts test --env=jsdom --no-cache --coverage",
     "test:cy": "cypress run",
-    "test:cy:ci": "run-p --race start test:cy",
+    "test:cy:ci": "run-p --race dev test:cy",
     "test:cy:t": "tsc -p ./cypress/tsconfig.json --noEmit",
     "test:cy:w": "cypress open",
     "test:t": "tsc -p ./tsconfig.json --noEmit",

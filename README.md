@@ -19,7 +19,7 @@ Install all of the application's dependencies:
 
 Next, you can start the application in a local environment with:
 
-`yarn start` or `npm run start`
+`yarn dev` or `npm run dev`
 
 Open your browser to `http://localhost:3000` to see the app running.
 
