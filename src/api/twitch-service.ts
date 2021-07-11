@@ -1,4 +1,5 @@
 import {
+  ACCESS_TOKEN,
   API_GET_STREAMS,
   API_GET_TOP_GAMES,
   CLIENT_ID,
@@ -71,7 +72,7 @@ const dispatch = ({ options, url }: IDispatchOptions, method: Method = 'get') =>
   axios({
     headers: {
       'Client-ID': CLIENT_ID,
-      // TODO: Need to a new auth header
+      Authorization: `Bearer ${ACCESS_TOKEN}`,
       // New auth header: https://dev.twitch.tv/docs/api/migration#authentication-tokens-and-headers
       // Getting the bearer token: https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#oauth-client-credentials-flow
       // Scopes: https://dev.twitch.tv/docs/authentication/#scopes
