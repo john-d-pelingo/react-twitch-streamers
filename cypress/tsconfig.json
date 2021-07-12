@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es5",
-    "types": ["cypress", "node", "@types/testing-library__cypress"]
+    "types": ["cypress", "node"]
   },
-  "include": ["**/*.ts", "../node_modules/cypress"]
+  "include": ["**/*.ts", "@testing-library/cypress"]
 }

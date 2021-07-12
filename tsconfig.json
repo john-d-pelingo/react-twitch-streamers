@@ -1,8 +1,7 @@
 {
   "extends": "@jdp-dev/tsconfig/tsconfig.react.json",
   "compilerOptions": {
-    "baseUrl": "src",
-    "rootDir": "./src"
+    "baseUrl": "src"
   },
   "include": ["src"]
 }

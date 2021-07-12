@@ -4,6 +4,6 @@ describe('TODO: App Initialization', () => {
   })
 
   it('should have the correct title', () => {
-    cy.title().should('be', 'React Twitch Streamers')
+    cy.title().should('equal', 'React Twitch Streamers')
   })
 })
