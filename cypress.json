@@ -4,5 +4,9 @@
   "ignoreTestFiles": "*.back.js",
   "supportFile": "cypress/support/index.ts",
   "video": false,
-  "reporter": "mochawesome"
+  "reporter": "mocha-junit-reporter",
+  "reporterOptions": {
+    "mochaFile": "results/test-results.xml",
+    "toConsole": false
+  }
 }

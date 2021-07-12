@@ -43,4 +43,4 @@ jobs:
           command: yarn build:ci
           post-steps:
             - store_test_results:
-                path: mochawesome-report
+                path: results
