@@ -6,7 +6,7 @@
   "video": false,
   "reporter": "mocha-junit-reporter",
   "reporterOptions": {
-    "mochaFile": "results/test-results.xml",
+    "mochaFile": "test-results/mocha/results.xml",
     "toConsole": false
   }
 }
