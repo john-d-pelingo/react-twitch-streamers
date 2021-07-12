@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css } from '@emotion/css'
 import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 

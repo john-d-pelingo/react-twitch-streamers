@@ -1,4 +1,4 @@
-import { css, cx } from 'emotion'
+import { css, cx } from '@emotion/css'
 import { FC } from 'react'
 
 import { GRAY, LIGHT_GRAY, MINT_GREEN } from '../constants/colors'

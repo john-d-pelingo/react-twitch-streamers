@@ -2,8 +2,8 @@
 // doing this locally will remove type problems
 // import '@testing-library/jest-dom/extend-expect'
 
-import * as emotion from 'emotion'
-import { createSerializer } from 'jest-emotion'
+import * as emotion from '@emotion/css'
+import { createSerializer } from '@emotion/jest'
 
 expect.addSnapshotSerializer(createSerializer(emotion))
 

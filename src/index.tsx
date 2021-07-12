@@ -1,4 +1,4 @@
-import { injectGlobal } from 'emotion'
+import { injectGlobal } from '@emotion/css'
 import ReactDOM from 'react-dom'
 import { HashRouter as Router } from 'react-router-dom'
 

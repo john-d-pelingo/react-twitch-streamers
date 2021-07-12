@@ -1,4 +1,4 @@
-import { css, keyframes } from 'emotion'
+import { css, keyframes } from '@emotion/css'
 import { FC } from 'react'
 
 import { TWITCH_PURPLE } from '../constants/colors'
