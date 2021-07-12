@@ -3,5 +3,6 @@
   "defaultCommandTimeout": 6000,
   "ignoreTestFiles": "*.back.js",
   "supportFile": "cypress/support/index.ts",
-  "video": false
+  "video": false,
+  "reporter": "mochawesome"
 }

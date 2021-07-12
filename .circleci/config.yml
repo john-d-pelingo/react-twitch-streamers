@@ -38,6 +38,9 @@ jobs:
             - ~/.cache
 
       - run:
-          name: Completing Build
+          name: Creating Build
           #command: npm run build:ci
           command: yarn build:ci
+          post-steps:
+            - store_test_results:
+                path: mochawesome-report
