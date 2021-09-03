@@ -2,7 +2,7 @@ language: node_js
 node_js:
   #  - "6"
   #  - "7"
-  - '12.9.1'
+  - '12.22.6'
 
 #env:
 #  global:
