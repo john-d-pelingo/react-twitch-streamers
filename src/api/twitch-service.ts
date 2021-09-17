@@ -76,6 +76,8 @@ const dispatch = ({ options, url }: IDispatchOptions, method: Method = 'get') =>
       // New auth header: https://dev.twitch.tv/docs/api/migration#authentication-tokens-and-headers
       // Getting the bearer token: https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#oauth-client-credentials-flow
       // Scopes: https://dev.twitch.tv/docs/authentication/#scopes
+      // NOTE: Do POST to https://id.twitch.tv/oauth2/token?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&grant_type=client_credentials
+      //  to get a new token
     },
     method,
     responseType: 'json',
