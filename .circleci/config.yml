@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cypress/base:14.17.3
+      - image: cypress/base:16.5.0
         environment:
           ## this enables colors in the output
           TERM: xterm
