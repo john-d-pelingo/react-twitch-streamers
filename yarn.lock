@@ -1585,10 +1585,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@jdp-dev/commitlint-config@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/commitlint-config/-/commitlint-config-0.0.19.tgz#7555f9548284504d69de128cf14fd0446abd4a59"
-  integrity sha512-x2I6rvghXILtXV+du3eRoGcMz4Eimr5sSC+Xac/EM6LOM/3xLiBFBshJfXt07voEqI8hJ12EsvE0ReP/vzW30Q==
+"@jdp-dev/commitlint-config@^1.0.0":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/commitlint-config/-/commitlint-config-1.0.2.tgz#7187ddc1313b3108fe54cbf3e638ea7a9c693539"
+  integrity sha512-ObLcv7RMxXZouBM51ovFy+cwgC6/9Wpjin2GCNU+lOWF21kQHeuZ4WSXg0k3X9cGTMGck1cZfpvre2J9DvgkXw==
 
 "@jdp-dev/eslint-config-typescript-react@^0.0.19":
   version "0.0.19"
