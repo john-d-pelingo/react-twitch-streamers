@@ -1606,10 +1606,10 @@
     react "^17.0.2"
     typescript "^4.4.3"
 
-"@jdp-dev/prettier-config@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-0.0.19.tgz#2bc2217ccb9349cb3818e61e90403a902e1c8569"
-  integrity sha512-OnF9h87Avg3TJzhQofu6+kwn0kxy46C+dURDbEuPdzV3fjHYVuiz8FyWl9n6ymiFNiHwRsLxKEyFK3pBDBfjZg==
+"@jdp-dev/prettier-config@^1.0.0":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@jdp-dev/prettier-config/-/prettier-config-1.0.2.tgz#66aaa8d8d9841d86b915188bf2c8f2b3a1603f25"
+  integrity sha512-cPUk6nAZD8t+pL88rhcshzY9rTXDsP+Kilv2d1E8lodtL/G+azm8GJPOcPHiY6thkGPpYDQaB357T6ieIc+ReQ==
 
 "@jdp-dev/tsconfig@^0.0.19":
   version "0.0.19"
