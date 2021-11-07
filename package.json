@@ -67,7 +67,7 @@
     "@jdp-dev/commitlint-config": "^0.0.19",
     "@jdp-dev/eslint-config-typescript-react": "^0.0.19",
     "@jdp-dev/prettier-config": "^0.0.19",
-    "@jdp-dev/tsconfig": "^0.0.19",
+    "@jdp-dev/tsconfig": "^1.0.0",
     "@testing-library/cypress": "^8.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.1",
