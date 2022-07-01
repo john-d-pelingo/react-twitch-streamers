@@ -100,7 +100,7 @@
     "snyk": "^1.672.0",
     "standard-version": "^9.2.0",
     "typescript": "^4.4.3",
-    "webpack": "^5.44.0"
+    "webpack": "^5.73.0"
   },
   "jest": {
     "collectCoverageFrom": [
